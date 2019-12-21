@@ -21,8 +21,6 @@ public class RemoveDuplicateNumber {
             }
 
         }
-
-
         return k;
 
     }
