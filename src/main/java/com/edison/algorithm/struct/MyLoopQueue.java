@@ -33,6 +33,7 @@ public class MyLoopQueue<T> {
     }
 
     public T remove() {
+
         if (isEmpty()) {
             throw new NoSuchElementException("queue is empty!");
         }

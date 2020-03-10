@@ -1,68 +1,49 @@
 package com.edison.algorithm.struct;
 
-public class PriorityQueue<T> {
-    private int highestPriority;
-    private MyLoopQueue[] queueArray;
-    private int currentMaxPriority;
+public class PriorityQueue {
+    private int maxSize;
+    private int[] priQueArray;
+    private int nItems;
 
-    public PriorityQueue(int highestPriority, int capacityOfEachPriority) {
-        queueArray = new MyLoopQueue[highestPriority + 1];
-        this.highestPriority = highestPriority;
-        this.currentMaxPriority = 0;
-        for (int i = 0; i <= highestPriority; i++) {
-            queueArray[i] = new MyLoopQueue(capacityOfEachPriority);
-
-        }
+    public PriorityQueue(int s) {
+        maxSize = s;
+        priQueArray = new int[maxSize];
+        nItems = 0;
     }
 
-    public void add(T element, int priority) {
-        if (priority > highestPriority || priority < 0) {
-            try {
-                throw new Exception("输入优先级不合法：" + highestPriority + "：最小优先级为0");
-            } catch (Exception e) {
-                e.printStackTrace();
+    public void insert(int value) {
+        int j;
+        if (isEmpty()) {
+            priQueArray[nItems++] = value;
+        } else {
+            j = nItems - 1;
+            while (j >= 0 && value > priQueArray[j]) {
+                priQueArray[j + 1] = priQueArray[j];
+                j--;
             }
+            priQueArray[j + 1] = value;
+            nItems++;
         }
-        if (priority > currentMaxPriority) {
-            currentMaxPriority = priority;
-        }
-        MyLoopQueue q = queueArray[priority];
-        q.add(element);
     }
 
-    public T remove() {
-        MyLoopQueue q = queueArray[currentMaxPriority];
-        while (q.isEmpty() && currentMaxPriority > 0) {
-            q = queueArray[--currentMaxPriority];
-        }
-        T answer = (T) q.remove();
-        return answer;
+    public int peekMin() {
+        return priQueArray[nItems - 1];
     }
 
-    public T peek() {
-        return (T) queueArray[currentMaxPriority].peek();
+
+    public boolean isEmpty() {
+        return nItems == 0;
+    }
+
+    public boolean isFull() {
+        return nItems == maxSize;
     }
 
     public static void main(String[] args) {
-        User user = new User();
-        user.setName("aaa");
-        User user1 = new User();
-        user1.setName("bbb");
-        User user2 = new User();
-        user2.setName("ccc");
-
-        PriorityQueue<User> priorityQueue=new PriorityQueue<>(10,1);
-        priorityQueue.add(user,4);
-        priorityQueue.add(user1,2);
-        priorityQueue.add(user2,5);
-
-        for (int i = 0; i < 3; i++) {
-            System.out.println(priorityQueue.peek().toString());
-            priorityQueue.remove();
-
-        }
-
-
-
+        PriorityQueue priorityQueue = new PriorityQueue(3);
+        priorityQueue.insert(4);
+        priorityQueue.insert(2);
+        priorityQueue.insert(8);
+        System.out.println(priorityQueue.peekMin());
     }
 }
