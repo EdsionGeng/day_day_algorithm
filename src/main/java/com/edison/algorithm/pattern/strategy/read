@@ -1,0 +1,4 @@
+
+策略模式：
+
+MovieTicket充当环境类角色，Discount充当抽象策略角色，StudentDiscount、 ChildrenDiscount 和VIPDiscount充当具体策略角色

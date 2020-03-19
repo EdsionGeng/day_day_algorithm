@@ -24,8 +24,8 @@ public class FinalExample {
 
     public static void reader() {
         FinalExample object = obj;
-//        int a = object.i;
-//        System.out.println(a);
+        int a = object.i;
+        System.out.println(a);
         int b = object.j;
         System.out.println(b);
 
