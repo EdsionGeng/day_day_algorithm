@@ -24,13 +24,34 @@ public class LeetCode2 {
             int sum = (node1 == null ? 0 : node1.val) + (node2 == null ? 0 : node2.val) + more;
             more = sum / 10;
             sum %= 10;
-            ListNode listNode = new ListNode(sum);
-            pre.next = listNode;
-            pre = listNode;
+            pre.next = new ListNode(sum);
+            pre = pre.next;
+            //pre = pre.next;
+            //pre = listNode;
             node1 = node1 == null ? null : node1.next;
             node2 = node2 == null ? null : node2.next;
         }
-        return pre;
+        return dummy.next;
+    }
+    public static ListNode add(ListNode l1,ListNode l2){
+        ListNode resNode = new ListNode(-1);//链表头节点，输出的时候这个节点不要
+        ListNode currNode = resNode; //当前使用的节点
+        int carry = 0;//进位
+        int l1Val;  //上数
+        int l2Val;  //下数
+        int temp;
+        while (l1 != null || l2 != null || carry > 0) {
+            l1Val = l1 == null ? 0 : l1.val;
+            l2Val = l2 == null ? 0 : l2.val;
+            temp = l1Val + l2Val + carry;  //上数 加 下数 加 进位
+            carry = temp / 10;  //获得进位的数值?
+            currNode.next = new ListNode(temp % 10);//把当前位的值写入链表
+            currNode = currNode.next;
+
+            l1 = l1 == null ? null : l1.next;
+            l2 = l2 == null ? null : l2.next;//移位，但是我们知道这两个都没有下一位了
+        }
+        return resNode.next;
     }
 
     public static void main(String[] args) {

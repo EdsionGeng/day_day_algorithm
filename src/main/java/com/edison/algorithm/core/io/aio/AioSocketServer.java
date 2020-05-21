@@ -19,7 +19,7 @@ public class AioSocketServer {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        /*
+        /**
          * 对于使用的线程池技术，我一定要多说几句
          * 1、Executors是线程池生成工具，通过这个工具我们可以很轻松的生成“固定大小的线程池”、“调度池”、“可伸缩线程数量的池”。具体请看API Doc
          * 2、当然您也可以通过ThreadPoolExecutor直接生成池。

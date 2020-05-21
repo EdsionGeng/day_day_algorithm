@@ -7,7 +7,6 @@ public class MinHeap {
         java.util.PriorityQueue<Integer> minHeap = new java.util.PriorityQueue<>();
         for (int i = 0; i < a.length; i++) {
             minHeap.offer(a[i]);
-
         }
 
         while (!minHeap.isEmpty()) {

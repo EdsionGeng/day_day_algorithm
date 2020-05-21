@@ -52,7 +52,7 @@ public class NioSocketServer {
                     SelectableChannel selectableChannel = readyKey.channel();
                     if(readyKey.isValid() && readyKey.isAcceptable()) {
                       //  NioSocketServer.LOGGER.info("======channel通道已经准备好=======");
-                        /*
+                        /**
                          * 当server socket channel通道已经准备好，就可以从server socket channel中获取socketchannel了
                          * 拿到socket channel后，要做的事情就是马上到selector注册这个socket channel感兴趣的事情。
                          * 否则无法监听到这个socket channel到达的数据

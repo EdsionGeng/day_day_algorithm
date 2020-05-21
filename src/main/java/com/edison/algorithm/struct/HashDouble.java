@@ -51,7 +51,8 @@ public class HashDouble {//再哈希法
         }
         int key = item.getKey();
         int hashVal = hashFunction1(key);
-        int stepSize = hashFuncton2(key);//用第二个哈希函数计算探测步骤
+        int stepSize = hashFuncton2(key);
+        //用第二个哈希函数计算探测步骤
         while (hashArray[hashVal] != null && hashArray[hashVal].getKey() != -1) {
             hashVal += stepSize;
             hashVal %= arraySize;

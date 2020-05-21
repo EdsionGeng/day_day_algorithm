@@ -24,7 +24,7 @@ public class SortColors {
         //遍历count，
         for (int n : count) {
             //判断值总共次数肯定不为0 ，下标索引++，然后 n-- 控制当前值应该赋值次数，
-            // while循环结束 ,k++ 代表上一值已结束，进行下一次值的赋予 0 ->1 ->2
+            //while循环结束 ,k++ 代表上一值已结束，进行下一次值的赋予 0 ->1 ->2
             while (n != 0) {
                 nums[i++] = k;
                 n--;

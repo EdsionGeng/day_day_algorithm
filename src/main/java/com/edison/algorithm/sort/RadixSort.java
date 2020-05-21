@@ -8,9 +8,12 @@ import java.util.Arrays;
  * @Created by edsiongeng
  */
 public class RadixSort {
+    public static void main(String[] args) {
+        int[] arr={2,5,19,4,28,3,57,37};
+        radixSort(arr);
+    }
 
-
-    public static void radinSort(int[] arr) {
+    public static void radixSort(int[] arr) {
         if (arr.length <= 1) return;
 
         int max = 0;
@@ -43,6 +46,9 @@ public class RadixSort {
             System.out.println("Sorting:" + Arrays.toString(arr));
             base *= 10;
 
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
         }
     }
 

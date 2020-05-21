@@ -8,7 +8,8 @@ package com.edison.algorithm.struct;
 
 public class HashChain {
 
-    private SortLink[] hashArray;//数组中存放链表
+    private SortLink[] hashArray;
+    //数组中存放链表
     private int arraySize;
 
     public HashChain(int size) {
@@ -34,7 +35,8 @@ public class HashChain {
     public void insert(SortLink.LinkNode node) {
         int key = node.getKey();
         int hashVal = hashFunction(key);
-        hashArray[hashVal].insert(node);//直接往链表添加
+        hashArray[hashVal].insert(node);
+        //直接往链表添加
     }
 
 

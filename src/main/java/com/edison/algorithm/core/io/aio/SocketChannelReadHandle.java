@@ -32,7 +32,7 @@ public class SocketChannelReadHandle implements CompletionHandler<Integer, Strin
         this.byteBuffer = byteBuffer;
     }
 
-    /* (non-Javadoc)
+    /**(non-Javadoc)
      * @see java.nio.channels.CompletionHandler#completed(java.lang.Object, java.lang.Object)
      */
     @Override

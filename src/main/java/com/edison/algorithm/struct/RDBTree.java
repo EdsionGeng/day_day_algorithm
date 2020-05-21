@@ -205,6 +205,18 @@ public class RDBTree<T extends Comparable<T>> {
 
 
     public static void main(String[] args) {
-
+        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int arrs[][] = new int[3][3];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arrs[i][j] = arr[j][i];
+            }
+        }
+        for (int i = 0; i < arrs.length; i++) {
+            for (int j = 0; j < arrs[i].length; j++) {
+                System.out.print(arrs[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
