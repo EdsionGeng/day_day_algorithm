@@ -1,11 +1,15 @@
 package com.edison.algorithm.struct;
 
+import java.net.ServerSocket;
+
 /**
  * @Description 哈希表
  * @Date 2020/3/5下午10:28
  * @Created by edsiongeng
  */
 public class MyHashTable {//线性探测
+
+    ServerSocket
 
     private DataItem[] hashArray;//DataItem类，表示每个数据项信息
     private int arraySize;//数组初识大小
