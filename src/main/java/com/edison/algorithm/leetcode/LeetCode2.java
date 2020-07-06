@@ -17,20 +17,23 @@ package com.edison.algorithm.leetcode;
 public class LeetCode2 {
 
     public static ListNode twoAdd(ListNode node1, ListNode node2) {
+
         ListNode dummy = new ListNode(0);
         int more = 0;
         ListNode pre = dummy;
         while (node1 != null || node2 != null || more > 0) {
             int sum = (node1 == null ? 0 : node1.val) + (node2 == null ? 0 : node2.val) + more;
             more = sum / 10;
-            sum %= 10;
+            sum = sum % 10;
             ListNode listNode = new ListNode(sum);
             pre.next = listNode;
-            pre = listNode;
+
             node1 = node1 == null ? null : node1.next;
             node2 = node2 == null ? null : node2.next;
+            pre = pre.next;
+
         }
-        return pre;
+        return dummy.next;
     }
 
     public static void main(String[] args) {

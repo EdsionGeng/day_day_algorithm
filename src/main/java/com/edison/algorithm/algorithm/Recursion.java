@@ -42,6 +42,30 @@ public class Recursion {
         return -1;
     }
 
+
+    public static  int searchNoRecursion(int[] array, int key, int low, int high) {
+
+
+        while (low < high) {
+            int mid = (high - low) / 2 + low;
+            if (array[mid] == key) {
+                return mid;
+            } else {
+                if (array[mid] > key) {
+                    high = mid;
+                    high--;
+                } else if (array[mid] < key) {
+                    low = mid;
+                    low++;
+                }
+            }
+
+        }
+
+
+        return -1;
+    }
+
     /**
      * 汉诺塔问题
      *
@@ -64,6 +88,9 @@ public class Recursion {
 
     public static void main(String[] args) {
 
-        move(2, "A", "B", "C");
+     //   move(2, "A", "B", "C");
+
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println(searchNoRecursion(array,8,0,8));
     }
 }

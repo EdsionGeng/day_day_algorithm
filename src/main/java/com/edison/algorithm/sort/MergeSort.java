@@ -69,4 +69,12 @@ public class MergeSort {
 
         }
     }
+
+    public static void main(String[] args) {
+        int[] array = {9,9,8,7,6,5,4,3,2,1};
+        int[] a=mergeSort(array,0,array.length-1);
+        for(int i : a){
+            System.out.print(i+" ");
+        }
+    }
 }
