@@ -1,7 +1,6 @@
 package com.edison.algorithm.struct;
 
 
-
 import java.util.LinkedList;
 import java.util.Queue;
 

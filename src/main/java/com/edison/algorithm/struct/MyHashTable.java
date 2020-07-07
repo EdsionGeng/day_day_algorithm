@@ -9,7 +9,7 @@ import java.net.ServerSocket;
  */
 public class MyHashTable {//线性探测
 
-    ServerSocket
+
 
     private DataItem[] hashArray;//DataItem类，表示每个数据项信息
     private int arraySize;//数组初识大小
