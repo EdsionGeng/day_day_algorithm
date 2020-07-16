@@ -27,7 +27,12 @@ public class RemoveDuplicateNumber {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 1, 3, 4, 3, 5};
-        removeDuplicate(arr);
+       int result= removeDuplicate(arr);
+        System.out.println(result);
+        for (int i = 0; i < result; i++) {
+            System.out.println(arr[i]);
+
+        }
 
     }
 
