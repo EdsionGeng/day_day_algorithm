@@ -1,6 +1,5 @@
 package com.edison.algorithm.struct;
 
-import java.net.ServerSocket;
 
 /**
  * @Description 哈希表
@@ -8,7 +7,6 @@ import java.net.ServerSocket;
  * @Created by edsiongeng
  */
 public class MyHashTable {//线性探测
-
 
 
     private DataItem[] hashArray;//DataItem类，表示每个数据项信息
@@ -120,5 +118,16 @@ public class MyHashTable {//线性探测
         public int getKey() {
             return iData;
         }
+    }
+
+    public static void main(String[] args) {
+        DataItem dataItem = new DataItem(1);
+        MyHashTable myHashTable = new MyHashTable(2);
+        myHashTable.insert(dataItem);
+
+        DataItem dataItem1 = new DataItem(2);
+        myHashTable.insert(dataItem1);
+        DataItem dataItem2 = new DataItem(3);
+        myHashTable.insert(dataItem2);
     }
 }

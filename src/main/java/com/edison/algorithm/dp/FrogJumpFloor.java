@@ -24,4 +24,36 @@ public class FrogJumpFloor {
         }
         return dp[floor];
     }
+
+    public static int gcd(int p, int q) {
+        if (q== 0) {
+            return p;
+        }
+        int r = p % q;
+        return gcd(q,r);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(gcd(1111111,1234567));
+//        System.out.println('b');
+//        System.out.println('b' + 'c');
+//        System.out.println((char) ('a' + 4));
+
+//        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+//        int[][] result = new int[arr.length][arr.length];
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = 0; j < arr[i].length; j++) {
+//                result[i][j] = arr[j][i];
+//
+//            }
+//        }
+//
+//
+//        for (int i = 0; i < result.length; i++) {
+//            for (int j = 0; j < result[i].length; j++) {
+//                System.out.println(result[i][j]);
+//            }
+//        }
+    }
 }

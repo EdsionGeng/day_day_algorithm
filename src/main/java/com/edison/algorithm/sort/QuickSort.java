@@ -14,10 +14,10 @@ public class QuickSort {
         array[j] = temp;
     }
 
-    private static void sort(int[] array) {
-        reQuickSort(array, 0, array.length - 1);
-
-    }
+//    private static void sort(int[] array) {
+//        reQuickSort(array, 0, array.length - 1);
+//
+//    }
 
     private static void reQuickSort(int[] array, int left, int right) {
         if (left >= right) {
@@ -25,7 +25,7 @@ public class QuickSort {
         }
 
         int partion = partion(array, left, right);
-        System.out.println("index:::"+partion);
+        System.out.println("index:::" + partion);
         reQuickSort(array, left, partion - 1);
         reQuickSort(array, partion + 1, right);
 
@@ -52,12 +52,42 @@ public class QuickSort {
         return j;
     }
 
+    public static void sort(int[] array, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int partion = partion1(array, left, right);
+        sort(array, left, partion-1);
+        sort(array, partion + 1, right);
+    }
+
+    public static int partion1(int array[], int left, int right) {
+        int i = left, j = right + 1;
+        int pivot = array[left];
+
+
+        while (true) {
+            while (i < right && array[++i] < pivot) {
+
+            }
+            while (j > 0 && array[--j] > pivot) {
+
+            }
+            if (i >= j) {
+                break;
+            } else {
+                swap(array, i, j);
+            }
+        }
+        swap(array, left, j);
+        return j;
+    }
 
     //测试
     public static void main(String[] args) {
         //int[] array = {7,3,5,2,9,8,6,1,4,7};
-        int[] array = {9,  8, 7, 6, 5, 4,10, 3, 2, 1};
-        sort(array);
+        int[] array = {9, 8, 7, 6, 5, 4, 10, 3, 2, 1};
+        sort(array, 0, array.length - 1);
         for (int i : array) {
             System.out.print(i + " ");
         }

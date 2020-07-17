@@ -9,25 +9,26 @@ import java.util.Arrays;
  */
 public class ShellSort {
 
-    public static void shellKnuthSort(int[] array) {
+    public static void shellKnuthSort(char[] array) {
         System.out.println("原数组为：" + Arrays.toString(array));
         int step = 1;
-        int len = array.length;
-        while (step <= len / 3) {
+        while (step < array.length / 3) {
             step = step * 3 + 1;
         }
+
         while (step > 0) {
-            for (int i = step; i < len; i++) {
+            for (int i = step; i < array.length; i++) {
+                char temp = array[i];
                 int j = i;
-                int temp = array[i];
                 while (j > step - 1 && temp < array[j - step]) {
                     array[j] = array[j - step];
                     j -= step;
                 }
                 array[j] = temp;
+                System.out.println("sort" + i + " 数组为：" + Arrays.toString(array));
 
             }
-            System.out.println("间隔为"+step+"的排序结果为"+Arrays.toString(array));
+
 
             step = (step - 1) / 3;
 
@@ -59,6 +60,9 @@ public class ShellSort {
 
     public static void main(String[] args) {
         int[] array = {4, 2, 8, 9, 5, 7, 6, 1, 3, 10};
-        shellKnuthSort(array);
+       // shellKnuthSort(array);
+
+        char[] chars = {'E', 'A', 'S', 'Y', 'S', 'H', 'E', 'L', 'L', 'S','O','R','T','Q','U','E','S','T','I','O','N'};
+        shellKnuthSort(chars);
     }
-}
+    }

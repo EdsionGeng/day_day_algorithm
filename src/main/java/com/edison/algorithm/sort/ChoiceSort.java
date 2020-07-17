@@ -8,11 +8,11 @@ package com.edison.algorithm.sort;
 public class ChoiceSort {
 
     public static int[] sort(int[] array) {
+
         for (int i = 0; i < array.length; i++) {
             int min = i;
-
             for (int j = i; j < array.length; j++) {
-                if (array[j] < array[min]) {
+                if (array[min] >array[j]) {
                     min = j;
                 }
 
@@ -21,8 +21,6 @@ public class ChoiceSort {
                 int temp = array[i];
                 array[i] = array[min];
                 array[min] = temp;
-
-
             }
 
         }
