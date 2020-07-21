@@ -1,7 +1,7 @@
 package com.edison.algorithm.algorithm;
 
 import java.util.LinkedList;
-import java.util.Queue;
+
 
 /**
  * @Description 最短路径 广度优先搜索实现
@@ -26,37 +26,51 @@ public class MinDistance {
 
 
     public void BFS() {
-        Node start=new Node(0,0,0,null);
-        /*****重要组成-待搜索队列的每个对象都是接下来要所搜的值******/
-        LinkedList<Node> queue=new LinkedList<>();//待搜索队列
+        Node start = new Node(0, 0, 0, null);
+        LinkedList<Node> queue = new LinkedList<>();
         queue.offer(start);
-        /*****重要组成-持续搜索的标志。待搜索队列里有东西******/
-        while(!queue.isEmpty()){
-            Node temp=queue.poll();
-            for(int i=0;i<4;i++){//尝试搜索四个方向的点，如果满足就加入待搜索队列中
-                int new_row=temp.row+direct[i][0];
-                int new_column=temp.column+direct[i][1];
-                if(new_row<0||new_column<0||new_row>=4||new_column>=4)
-                    continue;//该方向上出界，考虑下一方向
-                if(array[new_row][new_column]==1)continue;
-                Node next=new Node(new_row, new_column,temp.round+1,temp);
-                if(new_row==3&&new_column==3)//找到了出口
-                {
+
+
+        while (!queue.isEmpty()) {
+            Node temp = queue.poll();
+            for (int i = 0; i < 4; i++) {
+                int row_temp = temp.row + direct[i][0];
+                int column_temp = temp.column + direct[i][1];
+                if (row_temp < 0 || column_temp < 0 || row_temp >= 4 || column_temp >= 4) {
+                    continue;
+                }
+                if (array[row_temp][column_temp]==1) {
+                    continue;
+                }
+                Node next = new Node(row_temp, column_temp, temp.round + 1, temp);
+
+                if (row_temp == 3 && column_temp == 3) {
                     queue.clear();
                     queue.offerFirst(next);
-                    while(next.pre!=null){
-                        queue.offerFirst(next.pre);//以前获取父节点
-                        next=next.pre;
+
+                    while (next.pre != null) {
+                        queue.addFirst(next.pre);
+                        next = next.pre;
                     }
-                    for(Node node:queue)
-                    {
-                        System.out.println("("+node.row+","+node.column+"),");
+
+                    for (Node node : queue) {
+                        System.out.println("row:" + node.row + " column:" + node.column);
                     }
                 }
-                array[new_row][new_column]=1;
+
+                array[row_temp][column_temp] = 1;
                 queue.offer(next);
             }
         }
+
+//        for (int i = 0; i < array.length; i++) {
+//            for (int j = 0; j < array[i].length; j++) {
+//
+//                System.out.println(array[i][j]);
+//
+//            }
+//
+//        }
     }
 
 
