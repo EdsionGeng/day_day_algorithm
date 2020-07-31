@@ -44,8 +44,6 @@ public class Recursion {
 
 
     public static  int searchNoRecursion(int[] array, int key, int low, int high) {
-
-
         while (low < high) {
             int mid = (high - low) / 2 + low;
             if (array[mid] == key) {
@@ -59,10 +57,7 @@ public class Recursion {
                     low++;
                 }
             }
-
         }
-
-
         return -1;
     }
 

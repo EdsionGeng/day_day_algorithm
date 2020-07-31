@@ -5,7 +5,7 @@ package com.edison.algorithm.core.thread;
  * @Date 2020/4/22下午11:26
  * @Created by edsiongeng
  */
-public class DrawThread  extends Thread{
+public class DrawThread extends Thread {
     private String name;                //操作人
     private MyCount myCount;        //账户
     private int x;                            //存款金额
@@ -16,6 +16,7 @@ public class DrawThread  extends Thread{
         this.x = x;
     }
 
+    @Override
     public void run() {
         myCount.drawing(x, name);
     }

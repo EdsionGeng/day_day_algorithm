@@ -37,8 +37,9 @@ public class RDBTree<T extends Comparable<T>> {
 
 
         //打印节点的关键值和颜色信息
+        @Override
         public String toString() {
-            return "" + key + (this.color == RED ? "R" : "B");
+            return "" + key + (this.color.equals(RED) ? "R" : "B");
         }
 
     }
@@ -67,12 +68,12 @@ public class RDBTree<T extends Comparable<T>> {
 
     public boolean isRed(RBNode<T> node) {
         Optional<RBNode<T>> nodel = Optional.ofNullable(node);
-        return nodel.isPresent() ? (nodel.get().color == RED ? true : false) : false;
+        return nodel.isPresent() ? (nodel.get().color.equals(RED) ? true : false) : false;
     }
 
     public boolean isBlack(RBNode<T> node) {
         Optional<RBNode<T>> nodel = Optional.ofNullable(node);
-        return nodel.isPresent() ? (nodel.get().color == BLACK ? true : false) : false;
+        return nodel.isPresent() ? (nodel.get().color.equals(BLACK) ? true : false) : false;
     }
 
 

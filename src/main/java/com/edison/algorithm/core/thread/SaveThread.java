@@ -16,6 +16,7 @@ public class SaveThread extends Thread {
         this.x = x;
     }
 
+    @Override
     public void run() {
         myCount.saving(x, name);
     }

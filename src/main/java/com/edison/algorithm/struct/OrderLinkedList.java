@@ -1,5 +1,7 @@
 package com.edison.algorithm.struct;
 
+import java.util.Stack;
+
 /**
  * @Description 有序链表
  * @Date 2020/3/1下午10:52
@@ -55,7 +57,15 @@ public class OrderLinkedList {
         orderLinkedList.insert(2);
         orderLinkedList.insert(3);
         orderLinkedList.insert(1);
+        Stack<Node> stack = new Stack<>();
+        while (orderLinkedList.head != null) {
+            stack.push(orderLinkedList.head);
+            orderLinkedList.head = orderLinkedList.head.next;
 
+        }
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop().data);
+        }
     }
 
 

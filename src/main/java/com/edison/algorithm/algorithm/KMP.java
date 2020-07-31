@@ -46,7 +46,7 @@ public class KMP {
     }
 
     public static void main(String[] args) {
-        String[] hayStack = {"a", "b", "c", "a", "b", "d"};
+        String[] hayStack = {"a", "b", "c", "a", "b", "e","a", "b", "d"};
         String[] needle = {"a", "b", "d"};
         int result = BFSearch(hayStack, needle);
         System.out.println(result);

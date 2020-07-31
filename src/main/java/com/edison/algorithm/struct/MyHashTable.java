@@ -85,7 +85,8 @@ public class MyHashTable {//线性探测
         while (hashArray[hashVal] != null) {
             if (hashArray[hashVal].getKey() == key) {
                 DataItem temp = hashArray[hashVal];
-                hashArray[hashVal] = nonItem;//表示为空，key-1;
+                //表示为空，key-1;
+                hashArray[hashVal] = nonItem;
                 itemNum--;
                 return temp;
             }

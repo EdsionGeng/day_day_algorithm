@@ -154,7 +154,7 @@ public class BinaryTree {
         return false;
     }
 
-    //得到继任
+    //得到继任节点
     public Node getSuccessor(Node delNode) {
         Node successorParent = delNode;
         Node successor = delNode;

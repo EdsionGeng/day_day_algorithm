@@ -7,72 +7,47 @@ package com.edison.algorithm.sort;
  */
 public class MergeSort {
 
-
-    public static int[] merge(int[] a, int[] b) {
-        int[] c = new int[a.length + b.length];
-        int aNum = 0, bNum = 0, cNum = 0;
-
-        while (aNum < a.length && bNum < b.length) {
-            if (a[aNum] >= b[bNum]) {
-                c[cNum++] = b[bNum++];
-            } else {
-                c[cNum++] = a[aNum++];
-            }
-
+    public static int[] merge(int[] arr, int start, int end) {
+        if (end > start) {
+            int mid = (end - start) / 2 + start;
+            merge(arr, start, mid);
+            merge(arr, mid + 1, end);
+            mergeSort(arr, start, mid, end);
         }
-        while (aNum == a.length && bNum < b.length) {
-            c[cNum++] = b[bNum++];
-        }
-
-        while (bNum == b.length && aNum < a.length) {
-            c[cNum++] = a[aNum++];
-        }
-        return c;
-
+        return arr;
     }
 
-
-    public static int[] mergeSort(int[] c, int start, int last) {
-        if (last > start) {
-            int mid = start + (last - start) / 2;
-            mergeSort(c, start, mid);
-            mergeSort(c, mid + 1, last);
-            merge(c,start,mid,last);
-
-        }
-        return c;
-    }
-
-
-    public static void merge(int[] c, int start, int mid, int last) {
+    public static void mergeSort(int[] data, int start, int mid, int last) {
         int[] temp = new int[last - start + 1];
         int i = start;
-        int j = mid + 1;
+        int j = mid+1;
         int k = 0;
 
         while (i <= mid && j <= last) {
-            if (c[i] < c[j]) {
-                temp[k++] = c[i++];
+            if (data[i] > data[j]) {
+                temp[k++] = data[j++];
             } else {
-                temp[k++] = c[j++];
+                temp[k++] = data[i++];
             }
         }
-        while (i <= mid) {
-            temp[k++] = c[i++];
+        while (i <= mid && j > last) {
+            temp[k++] = data[i++];
         }
-        while (j <= last) {
-            temp[k++] = c[j++];
+        while (i > mid && j <= last) {
+            temp[k++] = data[j++];
         }
 
         for (int l = 0; l < temp.length; l++) {
-            c[l + start] = temp[l];
-
+            data[start + l] = temp[l];
         }
+
     }
 
+
+
     public static void main(String[] args) {
-        int[] array = {9,9,8,7,6,5,4,3,2,1};
-        int[] a=mergeSort(array,0,array.length-1);
+        int[] array = {9,8,7,6,5,4,3,2,1};
+        int[] a=merge(array,0,array.length-1);
         for(int i : a){
             System.out.print(i+" ");
         }

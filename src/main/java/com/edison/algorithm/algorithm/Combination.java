@@ -6,8 +6,14 @@ package com.edison.algorithm.algorithm;
  * @Created by edsiongeng
  */
 public class Combination {
-    private char[] persons;//组中所有可供选择的人员
-    private boolean[] selects;//标记成员是否被选中，选中为true
+    /**
+     *组中所有可供选择的人员
+     */
+    private char[] persons;
+    /**
+     * 标记成员是否被选中，选中为true
+     */
+    private boolean[] selects;
 
     public Combination(char[] persons) {
         this.persons = persons;
