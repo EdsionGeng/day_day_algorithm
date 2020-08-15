@@ -35,7 +35,7 @@ public class MyLoopQueue<T> {
     public T remove() {
 
         if (isEmpty()) {
-            throw new NoSuchElementException("queue is empty!");
+            throw new NoSuchElementException("ueue is empty!");
         }
         T answer = array[begin];
         array[begin++] = null;
@@ -82,7 +82,6 @@ public class MyLoopQueue<T> {
             if (i != size() - 1) {
                 sb.append(",");
             }
-
         }
         sb.append("]");
         return sb.toString();

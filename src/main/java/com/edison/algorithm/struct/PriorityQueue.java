@@ -44,6 +44,9 @@ public class PriorityQueue {
         priorityQueue.insert(4);
         priorityQueue.insert(2);
         priorityQueue.insert(8);
-        System.out.println(priorityQueue.peekMin());
+
+        while (!priorityQueue.isEmpty()) {
+            System.out.println(priorityQueue.peekMin());
+        }
     }
 }

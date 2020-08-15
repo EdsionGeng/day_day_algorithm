@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class HeapSort {
     public static void main(String[] args) {
         int[] arr = {8, 5, 4, 2, 3, 7, 6, 1, 9};
-        sort(arr);
+        heapSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
@@ -64,4 +64,32 @@ public class HeapSort {
     }
 
 
+    public static void heapSort(int[] array) {
+        for (int i = array.length / 2 - 1; i >= 0; i--) {
+
+            adjustHeap(array, i, array.length);
+        }
+        for (int j = array.length - 1; j >= 0; j--) {
+            swap(array, 0, j);
+            adjustHeap2(array, 0, j);
+        }
+
+
+    }
+
+    public static void adjustHeap2(int[] array, int i, int length) {
+        int temp = array[i];
+        for (int k = 2 * i + 1; k < length; k = k * 2 + 1) {
+            if (k + 1 < length && array[k] < array[k + 1]) {
+                k++;
+            }
+            if (array[k] > temp) {
+                array[i] = array[k];
+                i = k;
+            } else {
+                break;
+            }
+        }
+        array[i] = temp;
+    }
 }
