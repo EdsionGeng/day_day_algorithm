@@ -9,6 +9,7 @@ import java.nio.ByteBuffer;
 
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
+import java.nio.channels.Pipe;
 
 /**
  * @Description TODO
@@ -46,7 +47,6 @@ public class SocketChannelReadHandle implements CompletionHandler<Integer, Strin
             }
             return;
         }
-
         log.info("completed(Integer result, Void attachment) : 然后我们来取出通道中准备好的值");
         /*
          * 实际上，由于我们从Integer result知道了本次channel从操作系统获取数据总长度

@@ -46,7 +46,6 @@ public class BinaryTree {
                         return true;
                     }
                 }
-
             }
         }
         return false;
@@ -154,7 +153,10 @@ public class BinaryTree {
         return false;
     }
 
-    //得到继任节点
+    /**
+     * 得到继任节点
+     */
+
     public Node getSuccessor(Node delNode) {
         Node successorParent = delNode;
         Node successor = delNode;
@@ -165,6 +167,22 @@ public class BinaryTree {
             current = current.leftChild;
         }
         //后继节点不是删除节点的右子节点，将后继节点替换删除节点
+        if (successor != delNode.rightChild) {
+            successorParent.leftChild = successor.rightChild;
+            successor.rightChild = delNode.rightChild;
+        }
+        return successor;
+    }
+
+    public Node getSuccessor2(Node delNode) {
+        Node successorParent = delNode;
+        Node successor = delNode;
+        Node current = delNode.rightChild;
+        while (current != null) {
+            successorParent = successor;
+            successor = current;
+            current = current.leftChild;
+        }
         if (successor != delNode.rightChild) {
             successorParent.leftChild = successor.rightChild;
             successor.rightChild = delNode.rightChild;
@@ -193,12 +211,12 @@ public class BinaryTree {
         bt.insert(20);
         bt.insert(80);
         bt.insert(10);
-//        bt.insert(30);
-//        bt.insert(60);
-//        bt.insert(90);
-//        bt.insert(25);
-//        bt.insert(85);
-//        bt.insert(100);
+        bt.insert(30);
+        bt.insert(60);
+        bt.insert(90);
+        bt.insert(25);
+        bt.insert(85);
+        bt.insert(100);
         bt.infixOrder(bt.root);
         System.out.println();
         bt.preOrder(bt.root);

@@ -1,6 +1,5 @@
 package com.edison.algorithm.core.rpc;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationHandler;
