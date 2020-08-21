@@ -14,11 +14,11 @@ public class Prim {
 
     public void getMinTree(int[][] G) {
         int[][] result = G;
-        boolean[] vertix = new boolean[G.length];
-        vertix[0] = true;
+        boolean[] vertex = new boolean[G.length];
+        vertex[0] = true;
         //初始化访问过的数组
         for (int i = 1; i < G.length; i++) {
-            vertix[i] = false;
+            vertex[i] = false;
         }
         List<Integer> list = new ArrayList<>();
         list.add(0);
@@ -29,7 +29,7 @@ public class Prim {
             for (int i = 0; i < list.size(); i++) {
                 int v1 = list.get(i);
                 for (int j = 0; j < G.length; j++) {
-                    if (vertix[j] != true) {
+                    if (vertex[j] != true) {
                         if (G[v1][j] != -1 && G[v1][j] < minDistance) {
                             minDistance = G[v1][j];
                             minV = j;
@@ -38,7 +38,7 @@ public class Prim {
                     }
                 }
             }
-            vertix[minV] = true;
+            vertex[minV] = true;
             list.add(minV);
             result[minI][minV] = 0;
             result[minV][minI] = 0;

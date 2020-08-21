@@ -114,25 +114,28 @@ public class Trie {
     }
 
     public static void main(String[] args) {
-        Trie t = new Trie();
-        t.addBranchInTrie("麻痹");
-        t.addBranchInTrie("尼玛的");
-        t.addBranchInTrie("狗日的");
-        // 插入联想词
-        t.addBranchInTrie("联想云科技");
-        t.addBranchInTrie("联盟");
-        t.addBranchInTrie("和利泰扩招了");
-
-        System.out.println("trie树中分枝的个数：" + t.size);
-
-        String word = "尼玛的";
-        System.out.println("Trie树中是否存在[ " + word + " ]敏感词: " + t.contains(word));
-        // 敏感词替换测试
-        t.sensitiveWordReplace("衮，尼玛的傻子，你麻痹的，你各狗日的，早晚揍死你。");
-
-        // trie树实现联想测试
-        t.prefixMatching("联", t.root);
-
+//        Trie t = new Trie();
+//        t.addBranchInTrie("麻痹");
+//        t.addBranchInTrie("尼玛的");
+//        t.addBranchInTrie("狗日的");
+//        // 插入联想词
+//        t.addBranchInTrie("联想云科技");
+//        t.addBranchInTrie("联盟");
+//        t.addBranchInTrie("和利泰扩招了");
+//
+//        System.out.println("trie树中分枝的个数：" + t.size);
+//
+//        String word = "尼玛的";
+//        System.out.println("Trie树中是否存在[ " + word + " ]敏感词: " + t.contains(word));
+//        // 敏感词替换测试
+//        t.sensitiveWordReplace("衮，尼玛的傻子，你麻痹的，你各狗日的，早晚揍死你。");
+//
+//        // trie树实现联想测试
+//        t.prefixMatching("联", t.root);
+        String[] needle = {"a", "b", "c", "a", "b", "e", "a", "b", "d"};
+        String[] hayStack = {"a", "b", "d"};
+        int result = KMP(needle, hayStack);
+        System.out.println(result);
     }
 
     private class Node {
@@ -148,6 +151,23 @@ public class Trie {
             this(false);
         }
 
+    }
+
+    public static int KMP(String[] k1, String[] k2) {
+        int i = 0, j = 0, l1 = k1.length, l2 = k2.length;
+        while (i < l1 && j < l2) {
+            if (k1[i] == k2[j]) {
+                i++;
+                j++;
+            } else {
+                i = i-(j - 1);
+                j = 0;
+            }
+        }
+        if (j == l2) {
+            return i - j;
+        }
+        return -1;
     }
 
 }

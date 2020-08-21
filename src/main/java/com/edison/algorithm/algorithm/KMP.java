@@ -1,5 +1,7 @@
 package com.edison.algorithm.algorithm;
 
+
+
 /**
  * 描述:
  * KMP字符串算法 BF 暴力匹配算法
@@ -46,8 +48,8 @@ public class KMP {
     }
 
     public static void main(String[] args) {
-        String[] hayStack = {"a", "b", "c", "a", "b", "e","a", "b", "d"};
-        String[] needle = {"a", "b", "d"};
+        String[] needle = {"a", "b", "c", "a", "b", "e","a", "b", "d"};
+        String[] hayStack = {"a", "b", "d"};
         int result = BFSearch(hayStack, needle);
         System.out.println(result);
 

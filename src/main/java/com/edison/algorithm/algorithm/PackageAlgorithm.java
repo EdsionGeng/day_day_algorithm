@@ -71,7 +71,6 @@ public class PackageAlgorithm {
         int[] weight={1,2,3};
         int[] value={2,2,2};
         System.out.println(zeroOnePack2(5,3,weight,value));
-
     }
 
 }

@@ -104,6 +104,7 @@ public class BinaryTree {
         Node parent = root;
         boolean isLeftChild = false;
 
+        //先找到这个节点，确定是否左子节点
         while (current.data != key) {
             parent = current;
             if (current.data > key) {
@@ -149,6 +150,7 @@ public class BinaryTree {
                 parent.rightChild = successor;
             }
             successor.leftChild = current.leftChild;
+
         }
         return false;
     }
@@ -174,21 +176,7 @@ public class BinaryTree {
         return successor;
     }
 
-    public Node getSuccessor2(Node delNode) {
-        Node successorParent = delNode;
-        Node successor = delNode;
-        Node current = delNode.rightChild;
-        while (current != null) {
-            successorParent = successor;
-            successor = current;
-            current = current.leftChild;
-        }
-        if (successor != delNode.rightChild) {
-            successorParent.leftChild = successor.rightChild;
-            successor.rightChild = delNode.rightChild;
-        }
-        return successor;
-    }
+
 
     private class Node {
         int data;
