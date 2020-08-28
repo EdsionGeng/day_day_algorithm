@@ -20,7 +20,6 @@ public class SpeciesIndividual {
 	
 	SpeciesIndividual()
 	{
-		//��ʼ��
 		this.genes=new String[TSPData.CITY_NUM];
 		this.fitness=0.0f;
 		this.distance=0.0f;

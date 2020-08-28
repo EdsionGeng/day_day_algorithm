@@ -11,22 +11,12 @@ package com.edison.algorithm.algorithm;
  */
 public class KMP {
 
-    public static int KMPSearch(String[] hayStack, String[] needle) {
-        int l1 = hayStack.length;
-        int l2 = needle.length;
-        int i = 0, j = 0;
-        while (i < l1 && j < l2) {
-            if (hayStack[i] == needle[j]) {
-                i++;
-                j++;
-            } else {
-            }
-        }
-        if (j == l2) {
-            return i - j;
-        }
-        return -1;
-    }
+    /**
+     * 暴力匹配
+     * @param hayStack
+     * @param needle
+     * @return
+     */
 
     public static int BFSearch(String[] hayStack, String[] needle) {
         int l1 = hayStack.length;

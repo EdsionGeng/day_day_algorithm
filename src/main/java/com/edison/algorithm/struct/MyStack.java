@@ -1,5 +1,7 @@
 package com.edison.algorithm.struct;
 
+import java.util.Stack;
+
 /**
  * @Description 栈
  * @Date 2020/2/29下午11:29
@@ -16,6 +18,8 @@ public class MyStack {
         top = -1;
 
     }
+
+
 
     public void push(int value) {
         if (top < maxSize - 1) {

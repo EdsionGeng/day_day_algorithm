@@ -16,7 +16,8 @@ import java.util.Set;
 public class Floyd<T> {
 
 
-    /**使用Floyd（弗洛伊德）算法，返回所有节点间的最短距离<br>
+    /**
+     * 使用Floyd（弗洛伊德）算法，返回所有节点间的最短距离<br>
      * 设置两个map<br>
      * 第一个 result，key为出发点，value是map，这个map的key是结束点，value是出发点到结束点的最短距离<br>
      * 第二个 path，key为出发点，value是map，这个map的key是结束点，value是出发点到结束点的最短距离的路径的最后的中转节点<br>
@@ -32,7 +33,6 @@ public class Floyd<T> {
      * 由于此时result的结果已经保存了中转1号节点的最短路径，此时如果继续并入2号节点为中转节点
      * 则是任意两个节点都经过中转节点1号节点和2号节点的最短路径，把所有节点作为中转节点后，得到的是所有节点间的最短距离
      *
-     *
      * @return
      */
     public Map<Vertex<T>, HashMap<Vertex<T>, Double>> getSmallestDistanceFloyd() {
@@ -40,7 +40,7 @@ public class Floyd<T> {
         Map<Vertex<T>, HashMap<Vertex<T>, Double>> result = new HashMap<>();
         //第二个 path，key为出发点，value是map，这个map的key是结束点，value是出发点到结束点的最短距离的路径的最后的中转节点
         Map<Vertex<T>, HashMap<Vertex<T>, Vertex<T>>> path = new HashMap<>();
-        Set<Vertex<T>> vertexSet =null; //getVertexSet();
+        Set<Vertex<T>> vertexSet = null; //getVertexSet();
         Vertex vertex;
         Edge edge;
 
@@ -101,4 +101,6 @@ public class Floyd<T> {
 
         return result;
     }
+
+
 }

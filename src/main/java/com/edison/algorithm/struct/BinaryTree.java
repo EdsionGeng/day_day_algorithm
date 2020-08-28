@@ -1,5 +1,6 @@
 package com.edison.algorithm.struct;
 
+
 /**
  * @Description 二叉树
  * @Date 2020/3/3下午6:52
@@ -104,7 +105,6 @@ public class BinaryTree {
         Node parent = root;
         boolean isLeftChild = false;
 
-        //先找到这个节点，确定是否左子节点
         while (current.data != key) {
             parent = current;
             if (current.data > key) {
@@ -150,7 +150,6 @@ public class BinaryTree {
                 parent.rightChild = successor;
             }
             successor.leftChild = current.leftChild;
-
         }
         return false;
     }
@@ -175,7 +174,6 @@ public class BinaryTree {
         }
         return successor;
     }
-
 
 
     private class Node {
@@ -205,12 +203,14 @@ public class BinaryTree {
         bt.insert(25);
         bt.insert(85);
         bt.insert(100);
+
+        //bt.delete(10);
         bt.infixOrder(bt.root);
-        System.out.println();
-        bt.preOrder(bt.root);
-        System.out.println();
-        bt.postOrder(bt.root);
-        System.out.println();
+//        System.out.println();
+//        bt.preOrder(bt.root);
+//        System.out.println();
+//        bt.postOrder(bt.root);
+//        System.out.println();
 
 //        bt.delete(10);//删除没有子节点的节点
 //        bt.delete(30);//删除有一个子节点的节点
@@ -222,4 +222,109 @@ public class BinaryTree {
 
 
     }
+
+    public boolean insert2(int data) {
+        Node node = new Node(data);
+        if (root == null) {
+            root = node;
+            return true;
+        } else {
+            Node current = root;
+            Node parentNode = null;
+            while (current != null) {
+                parentNode = current;
+                if (current.data > data) {
+                    current = current.leftChild;
+                    if (current == null) {
+                        parentNode.leftChild = node;
+                        return true;
+                    }
+                } else {
+                    current = current.rightChild;
+                    if (current == null) {
+                        parentNode.rightChild = current;
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public boolean delete2(int key) {
+        Node current = root;
+        Node parent = root;
+
+        boolean isLeftChild = false;
+
+        while (current.data != key) {
+            parent = current;
+            if (current.data > key) {
+                isLeftChild = true;
+                current = current.leftChild;
+            } else if (current.data < key) {
+                current = current.rightChild;
+            }
+            if (current == null) {
+                return false;
+            }
+        }
+
+        if (current.leftChild == null && current.rightChild == null) {
+            if (current == root) {
+                root = null;
+
+            } else if (isLeftChild) {
+                parent.leftChild = null;
+            } else {
+                parent.rightChild = null;
+            }
+            return true;
+        } else if (current.leftChild == null && current.rightChild != null) {
+            if (current == root) {
+                root = current.rightChild;
+            } else if (isLeftChild) {
+                parent.leftChild = current.rightChild;
+            } else {
+                parent.rightChild = current.rightChild;
+            }
+            return true;
+        } else if (current.leftChild != null && current.rightChild != null) {
+
+            Node successor = getSuccessor2(current);
+            if (current == root) {
+                root = successor;
+            } else if (isLeftChild) {
+                parent.leftChild = successor;
+
+            } else {
+                parent.rightChild = successor;
+            }
+            successor.leftChild = current.leftChild;
+
+        }
+
+        return false;
+    }
+
+
+    public Node getSuccessor2(Node delNode) {
+        Node successor = delNode;
+        Node successorParent = delNode;
+
+        Node current = delNode.rightChild;
+        while (current != null) {
+            successorParent = successor;
+            successor = current;
+            current = current.leftChild;
+        }
+
+        if (current != delNode.rightChild) {
+            successorParent.leftChild = successor.leftChild;
+            successor.rightChild = delNode.rightChild;
+        }
+        return successor;
+    }
+
 }

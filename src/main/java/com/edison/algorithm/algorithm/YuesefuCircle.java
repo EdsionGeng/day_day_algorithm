@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author gengyongchang
  * @create 2020-05-21 16:12
  */
-public class 约瑟夫环 {
+public class YuesefuCircle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int total = scanner.nextInt();
