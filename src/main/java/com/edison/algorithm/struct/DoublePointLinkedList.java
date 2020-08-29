@@ -61,7 +61,19 @@ public class DoublePointLinkedList {
         return true;
     }
 
-
+    public boolean deleteTail() {
+        if (size == 0) {
+            return false;
+        }
+        if (head.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+        }
+        size--;
+        return true;
+    }
 
 
     public void display() {

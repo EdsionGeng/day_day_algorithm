@@ -150,6 +150,7 @@ public class BinaryTree {
                 parent.rightChild = successor;
             }
             successor.leftChild = current.leftChild;
+
         }
         return false;
     }
