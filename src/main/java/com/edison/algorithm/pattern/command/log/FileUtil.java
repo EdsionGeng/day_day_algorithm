@@ -25,7 +25,7 @@ public class FileUtil {
 
     public static ArrayList readCommands() {
         try {
-            FileInputStream fileInputStream = new FileInputStream("/Users/edsiongeng/IdeaProjects/day_day_algorithm/confg.log");
+            FileInputStream fileInputStream = new FileInputStream("/Users/edsiongeng/IdeaProjects/day_day_algorithm/config.log");
             ObjectInputStream objectInputStream = new ObjectInputStream(new BufferedInputStream(fileInputStream));
 
             ArrayList commands = (ArrayList) objectInputStream.readObject();

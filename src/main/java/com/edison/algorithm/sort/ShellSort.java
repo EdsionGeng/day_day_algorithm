@@ -26,14 +26,9 @@ public class ShellSort {
                 }
                 array[j] = temp;
                 System.out.println("sort" + i + " 数组为：" + Arrays.toString(array));
-
             }
-
-
             step = (step - 1) / 3;
-
         }
-
         System.out.println("final sort result:" + Arrays.toString(array));
 
     }

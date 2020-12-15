@@ -1,6 +1,5 @@
 package com.edison.algorithm.algorithm;
 
-import java.util.BitSet;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -8,6 +7,9 @@ import java.util.Scanner;
 /**
  * 描述:
  * 哈夫曼编码
+ * 霍夫曼编码是一种无前缀编码。解码时不会混淆。其主要应用在数据压缩，加密解密等场合。
+ * 如果考虑到进一步节省存储空间，就应该将出现概率大（占比多）的字符用尽量少的0-1进行编码，也就是更靠近根（节点少），
+ * 这也就是最优二叉树-哈夫曼树。
  *
  * @author gengyongchang
  * @create 2020-04-23 14:19
@@ -47,10 +49,11 @@ public class Huffman {
         }
     }
 
-    public static void HufmanCode() {
+    public static void hufmanCode() {
         if (hufNodeLinkedList.size() == 1) {
             return;
         }
+
         while (hufNodeLinkedList.size() > 1) {
             Collections.sort(hufNodeLinkedList);
             HufNode node = new Huffman().new HufNode(hufNodeLinkedList.get(0), hufNodeLinkedList.get(1));
@@ -74,10 +77,10 @@ public class Huffman {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
-        for(int i=0;i<N;i++){
-            hufNodeLinkedList.add(new Huffman().new HufNode(scanner.nextInt(),scanner.next()));
+        for (int i = 0; i < N; i++) {
+            hufNodeLinkedList.add(new Huffman().new HufNode(scanner.nextInt(), scanner.next()));
         }
-        HufmanCode();
+        hufmanCode();
         decode(hufNodeLinkedList.get(0), "");
     }
 }

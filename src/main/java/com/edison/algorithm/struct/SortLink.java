@@ -73,19 +73,19 @@ public class SortLink {
     }
 
     class LinkNode {
-        private int iData;
+        private int data;
         public LinkNode next;
 
-        public LinkNode(int iData) {
-            this.iData = iData;
+        public LinkNode(int data) {
+            this.data = data;
         }
 
         public int getKey() {
-            return iData;
+            return data;
         }
 
         public void displayLink() {
-            System.out.println(iData + " ");
+            System.out.println(data + " ");
         }
     }
 }

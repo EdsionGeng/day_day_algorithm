@@ -14,13 +14,17 @@ public class ReverseString {
             stringBuilder.setCharAt(j, s.charAt(i));
             i++;
             j--;
+
         }
         return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
         String str = "hello world";
-        System.out.println(reverseString(str));
+
+        for (int  i= str.length()-1; i>=0 ;i--) {
+            System.out.print(str.charAt(i));
+        }
     }
 
 }

@@ -6,7 +6,7 @@ import java.util.Hashtable;
 /**
  * @Description TODO
  * @Date 2020/3/21上午11:58
- * @Created by edsiongeng
+ * @author by edsiongeng
  */
 public class IgoChessmanFactory {
 

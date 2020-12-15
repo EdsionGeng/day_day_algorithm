@@ -20,7 +20,7 @@ public class HiAgent {
         Hi hi = new Hi();
         server.registerMBean(hi, hiName);
         Jack jack = new Jack();
-        server.registerMBean(jack, new ObjectName("jack :name=Jack"));
+        server.registerMBean(jack, new ObjectName("jack:name=Jack"));
         jack.addNotificationListener(new HiListener(),null,hi);
         Thread.sleep(50000);
     }

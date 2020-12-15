@@ -35,8 +35,7 @@ public class SingleLinkedList {
         size--;
         return obj;
     }
-//查找指定元素，找到则返回节点，找不到返回null
-
+    //查找指定元素，找到则返回节点，找不到返回null
     public Node find(Object obj) {
         Node current = head;
         int tempSize = size;

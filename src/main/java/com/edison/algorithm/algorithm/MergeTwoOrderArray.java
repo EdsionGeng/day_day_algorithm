@@ -18,9 +18,9 @@ public class MergeTwoOrderArray {
     }
 
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 0, 0, 0};
+        int[] a = {1, 2, 3,4, 0, 0, 0};
         int[] b = {2, 5, 6};
-        mergeTwoSortArray(a, 3, b, 3);
+        mergeTwoSortArray(a, 4, b, 3);
 
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);

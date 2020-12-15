@@ -16,7 +16,6 @@ public class QuickSort {
 
 //    private static void sort(int[] array) {
 //        reQuickSort(array, 0, array.length - 1);
-//
 //    }
 
     private static void reQuickSort(int[] array, int left, int right) {
@@ -56,32 +55,11 @@ public class QuickSort {
         if (left >= right) {
             return;
         }
-        int partion = partion1(array, left, right);
+        int partion = partion(array, left, right);
         sort(array, left, partion-1);
         sort(array, partion + 1, right);
     }
 
-    public static int partion1(int array[], int left, int right) {
-        int i = left, j = right + 1;
-        int pivot = array[left];
-
-
-        while (true) {
-            while (i < right && array[++i] < pivot) {
-
-            }
-            while (j > 0 && array[--j] > pivot) {
-
-            }
-            if (i >= j) {
-                break;
-            } else {
-                swap(array, i, j);
-            }
-        }
-        swap(array, left, j);
-        return j;
-    }
 
     //测试
     public static void main(String[] args) {

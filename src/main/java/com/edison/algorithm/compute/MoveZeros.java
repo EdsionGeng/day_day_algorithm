@@ -18,20 +18,15 @@ public class MoveZeros {
      */
 
     public static int[] method1(int[] nums) {
-
-
         int n = nums.length;
         int k = 0;
-
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 nums[k++] = nums[i];
             }
-
         }
         while (k < n) {
             nums[k++] = 0;
-
         }
         return nums;
 

@@ -45,6 +45,7 @@ public class WeeklyLog implements Serializable {
         this.content = content;
     }
 
+    @Override
     public WeeklyLog clone() {
         try {
             Object obj = null;

@@ -36,7 +36,6 @@ public class Word_Pattern {
     public static void main(String[] args) {
         String str = "dog do dog";
         String pattern = "aaa";
-
         System.out.println(wordPattern(pattern, str));
     }
 

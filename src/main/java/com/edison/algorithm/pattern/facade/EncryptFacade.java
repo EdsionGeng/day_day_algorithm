@@ -21,7 +21,5 @@ public class EncryptFacade {
         String plainStr=reader.Read(fileNameSrc);
         String encryptStr=cipherMachine.encrypt(plainStr);
         writer.write(encryptStr,fileNameDesc);
-
-
     }
 }

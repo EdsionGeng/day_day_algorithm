@@ -19,6 +19,6 @@ public class Attachment  implements Serializable{
     }
 
     public void download() {
-        System.out.println("download atatchment:" + name);
+        System.out.println("download attachment:" + name);
     }
 }

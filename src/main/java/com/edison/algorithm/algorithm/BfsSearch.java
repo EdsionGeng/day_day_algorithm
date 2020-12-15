@@ -23,7 +23,7 @@ public class BfsSearch {
 
         while (!queue.isEmpty()) {
             Node node = queue.poll();//队列头节点出队
-            visite(node);
+            visit(node);
 
             Set<Node> set = node.getSet();//获取所有直接关联节点
 
@@ -59,7 +59,7 @@ public class BfsSearch {
         return nodeA;
     }
 
-    public void visite(Node node) {//访问每个节点
+    public void visit(Node node) {//访问每个节点
 
         System.out.println(node.getName());
 
@@ -73,7 +73,7 @@ public class BfsSearch {
         visited.add(start);
         while (!queue.isEmpty()) {
             Node node = queue.poll();
-            visite(node);
+            visit(node);
             Set<Node> set = node.getSet();
             Iterator<Node> iterator = set.iterator();
             while (iterator.hasNext()) {

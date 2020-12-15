@@ -61,7 +61,6 @@ public class PackageAlgorithm {
         for (int i = 1; i < N + 1; i++) {
             for (int j = V; j < weight[i - 1]; j--) {
                 dp[j] = Math.max(dp[j - weight[i - 1]] + value[i - 1], dp[j]);
-
             }
         }
         return dp[V];

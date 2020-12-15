@@ -31,7 +31,6 @@ public class LRU<K, V> implements Iterable<K> {
             return null;
         }
         //最新访问数据移动到链表头
-
         Node node = map.get(key);
         remove(node);
         addFirst(node);

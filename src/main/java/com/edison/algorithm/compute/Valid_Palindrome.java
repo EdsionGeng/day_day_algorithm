@@ -1,7 +1,7 @@
 package com.edison.algorithm.compute;
 
 /**
- * @Description TODO
+ * @Description 验证是否是回文字符串
  * @Date 2019/12/5上午12:12
  * @Created by edsiongeng
  */
@@ -24,7 +24,6 @@ public class Valid_Palindrome {
                     return false;
                 }
             } else if (Character.isLetterOrDigit(ch_1)) {
-
                 j--;
             } else {
                 i++;
@@ -36,7 +35,7 @@ public class Valid_Palindrome {
     public static void main(String[] args) {
         String s = "A man,a plan,a cnaalPanma";
         System.out.println(Valid_Palindrome.isPalindrome(s));
-        String str="abccba";
+        String str="abcdcba";
         System.out.println(Valid_Palindrome.isPalindrome(str));
     }
 

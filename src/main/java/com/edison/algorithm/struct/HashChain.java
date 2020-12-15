@@ -9,7 +9,9 @@ package com.edison.algorithm.struct;
 public class HashChain {
 
     private SortLink[] hashArray;
-    //数组中存放链表
+    /**
+     *数组中存放链表
+     */
     private int arraySize;
 
     public HashChain(int size) {

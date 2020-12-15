@@ -15,6 +15,5 @@ public class OffState  extends State{
     @Override
     public void off(Switch s) {
         System.out.println("已经关闭");
-
     }
 }
