@@ -1,6 +1,8 @@
 package com.edison.algorithm.struct;
 
 
+import sun.misc.Unsafe;
+
 import java.util.concurrent.DelayQueue;
 
 /**
@@ -9,7 +11,5 @@ import java.util.concurrent.DelayQueue;
  * @Created by edsiongeng
  */
 public class MyDelayQueue extends DelayQueue {
-
-
 
 }
