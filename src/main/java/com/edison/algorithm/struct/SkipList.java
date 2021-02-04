@@ -21,9 +21,7 @@ public class SkipList {
     public Node find(int value) {
         Node temp = head;
         for (int i = levelCount - 1; i >= 0; i--) {
-
             while (temp.next[i] != null && temp.next[i].value < value) {
-
                 temp = temp.next[i];
             }
         }
@@ -36,21 +34,8 @@ public class SkipList {
         }
     }
 
-    public Node find2(int value) {
-        Node temp = head;
-        for (int i = levelCount - 1; i >= 0; i--) {
-            while (temp.next[i] != null && temp.next[i].value < value) {
-                temp = temp.next[i];
-            }
-        }
-        if (temp.next[0] != null && temp.next[0].value == value) {
-            System.out.println(value + " find success");
-            return temp.next[0];
-        }
-        return null;
-    }
+    
     //为了方便，跳跃表在插入时候，插入节点在当前跳跃表是不存在的，不允许插入重复数值节点
-
     public void insert(int value) {
         int level = getLevel();
 

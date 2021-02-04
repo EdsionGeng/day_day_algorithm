@@ -35,7 +35,7 @@ public class MyLoopQueue<T> {
     public T remove() {
 
         if (isEmpty()) {
-            throw new NoSuchElementException("ueue is empty!");
+            throw new NoSuchElementException("queue is empty!");
         }
         T answer = array[begin];
         array[begin++] = null;

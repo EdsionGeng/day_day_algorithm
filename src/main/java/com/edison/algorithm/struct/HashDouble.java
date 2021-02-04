@@ -40,7 +40,7 @@ public class HashDouble {//再哈希法
         return key % arraySize;
     }
 
-    public int hashFuncton2(int key) {
+    public int hashFunction2(int key) {
         return 5 - key % 5;
     }
 
@@ -51,7 +51,7 @@ public class HashDouble {//再哈希法
         }
         int key = item.getKey();
         int hashVal = hashFunction1(key);
-        int stepSize = hashFuncton2(key);
+        int stepSize = hashFunction2(key);
         //用第二个哈希函数计算探测步骤
         while (hashArray[hashVal] != null && hashArray[hashVal].getKey() != -1) {
             hashVal += stepSize;
@@ -79,7 +79,7 @@ public class HashDouble {//再哈希法
             return null;
         }
         int hashVal = hashFunction1(key);
-        int stepSize = hashFuncton2(key);
+        int stepSize = hashFunction2(key);
         while (hashArray[hashVal] != null) {
             if (hashArray[hashVal].getKey() == key) {
                 DataItem temp = hashArray[hashVal];
@@ -96,7 +96,7 @@ public class HashDouble {//再哈希法
 
     public DataItem find(int key) {
         int hashVal = hashFunction1(key);
-        int stepSize = hashFuncton2(key);
+        int stepSize = hashFunction2(key);
         while (hashArray[hashVal] != null) {
             if (hashArray[hashVal].getKey() == key) {
                 return hashArray[hashVal];

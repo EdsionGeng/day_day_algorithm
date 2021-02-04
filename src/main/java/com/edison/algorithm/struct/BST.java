@@ -18,7 +18,7 @@ public class BST {
             return true;
         }
         if (root.val < target) {
-            return isExist(root.right, target);
+            return isExist(root.left, target);
         }
         if (root.val > target) {
             return isExist(root.right, target);

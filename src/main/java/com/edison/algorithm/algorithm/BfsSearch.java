@@ -38,6 +38,10 @@ public class BfsSearch {
         }
     }
 
+    public void dfs(Node start) {
+        Stack<Node> stack = new Stack<>();
+    }
+
 
     public Node init() {//初始化一个图
         Node nodeA = new Node("A");
@@ -67,10 +71,10 @@ public class BfsSearch {
 
     public void bfsSearch(Node start) {
 
-        Queue<Node> queue = new LinkedList();
-        Queue<Node> visited = new LinkedList();
-        queue.add(start);
-        visited.add(start);
+        Queue<Node> queue = new LinkedList<>();
+        Queue<Node> visited = new LinkedList<>();
+        queue.offer(start);
+        visited.offer(start);
         while (!queue.isEmpty()) {
             Node node = queue.poll();
             visit(node);
@@ -79,8 +83,8 @@ public class BfsSearch {
             while (iterator.hasNext()) {
                 Node node1 = iterator.next();
                 if (!visited.contains(node1)) {
-                    queue.add(node1);
-                    visited.add(node1);
+                    queue.offer(node1);
+                    visited.offer(node1);
                 }
             }
         }
