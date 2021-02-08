@@ -1,8 +1,6 @@
 package com.edison.algorithm.struct;
 
 
-import sun.misc.Unsafe;
-
 import java.util.concurrent.DelayQueue;
 
 /**
