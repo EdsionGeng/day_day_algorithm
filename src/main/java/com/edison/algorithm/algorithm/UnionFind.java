@@ -41,7 +41,6 @@ public class UnionFind {
             parent[rootP] = rootQ;
             size[rootQ] += size[rootP];
         }
-        count--;
 
     }
 
