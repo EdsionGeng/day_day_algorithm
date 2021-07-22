@@ -64,4 +64,5 @@ public class Prim {
                 {5,4,4,5,2,-1}};
         test.getMinTree(G);
     }
+
 }

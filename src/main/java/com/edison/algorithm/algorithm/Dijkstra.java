@@ -55,7 +55,7 @@ public class Dijkstra {
         int[] result = test.getShortestPaths(adjMatrix);
         System.out.println("顶点0到图中所有顶点之间的最短距离为：");
         for (int i = 0; i < result.length; i++){
-            System.out.print(result[i] + "");
+            System.out.print(result[i] + " ");
         }
 
     }

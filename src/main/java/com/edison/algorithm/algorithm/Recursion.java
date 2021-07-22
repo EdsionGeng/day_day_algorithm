@@ -84,8 +84,10 @@ public class Recursion {
     public static void main(String[] args) {
 
      //   move(2, "A", "B", "C");
-
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        System.out.println(searchNoRecursion(array,8,0,8));
+        System.out.println(getFactorial(4));
+       // int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+       // System.out.println(searchNoRecursion(array,8,0,8));
     }
+
+
 }

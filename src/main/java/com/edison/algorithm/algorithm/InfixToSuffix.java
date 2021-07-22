@@ -8,9 +8,13 @@ import java.util.Scanner;
  * @Created by edsiongeng
  */
 public class InfixToSuffix {
-    //定义运算符栈
+    /**
+     *定义运算符栈
+     */
     private MyCharStack s1;
-    //定义存储结果栈
+    /**
+     * 定义存储结果栈
+     */
     private MyCharStack s2;
     private String input;
 

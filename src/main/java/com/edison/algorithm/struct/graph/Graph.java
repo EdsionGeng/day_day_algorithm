@@ -17,7 +17,7 @@ public class Graph<T> {
     private Map<T, Vertex<T>> vertexMap;
 
     /**
-     * 图中边的树木，顶点数目可以用vertxMap.size
+     * 图中边的数目，顶点数目可以用vertxMap.size
      */
     private int edgeCount;
 

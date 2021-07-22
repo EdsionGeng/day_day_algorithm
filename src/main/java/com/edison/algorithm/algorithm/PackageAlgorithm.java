@@ -9,17 +9,17 @@ public class PackageAlgorithm {
     /**
      * 0-1背包问题
      *
-     * @param V      背包容量
-     * @param N      物品种类
+     * @param capacity      背包容量
+     * @param kind      物品种类
      * @param weight 物品重量
      * @param value  物品价值
      * @return
      */
 
-    public static String zeroOnePack(int V, int N, int[] weight, int[] value) {
-        int[][] dp = new int[N + 1][V + 1];
-        for (int i = 1; i < N + 1; i++) {
-            for (int j = 1; j < V + 1; j++) {
+    public static String zeroOnePack(int capacity, int kind, int[] weight, int[] value) {
+        int[][] dp = new int[capacity + 1][kind + 1];
+        for (int i = 1; i < capacity + 1; i++) {
+            for (int j = 1; j < kind + 1; j++) {
 
                 if (weight[i - 1] > j) {
                     dp[i][j] = dp[i - 1][j];
@@ -29,10 +29,10 @@ public class PackageAlgorithm {
             }
 
         }
-        int maxValue = dp[N][V];
-        int j = V;
+        int maxValue = dp[capacity][kind];
+        int j = kind;
         String numStr = "";
-        for (int i = N; i > 0; i--) {
+        for (int i = capacity; i > 0; i--) {
             if (dp[i][j] > dp[i - 1][j]) {
                 numStr = i + " " + numStr;
                 j = j - weight[i - 1];
@@ -49,21 +49,21 @@ public class PackageAlgorithm {
      * 0-1背包优化解法
      * 思路：只用一个一维数组记录状态，dp[i]表示容量为i 的背包所能装入物品的最大价值
      * 用逆序来实现
-     * @param V
-     * @param N
+     * @param capacity
+     * @param kind
      * @param weight
      * @param value
      * @return
      */
 
-    public static int zeroOnePack2(int V, int N, int[] weight, int[] value) {
-        int[] dp = new int[V + 1];
-        for (int i = 1; i < N + 1; i++) {
-            for (int j = V; j < weight[i - 1]; j--) {
+    public static int zeroOnePack2(int capacity, int kind, int[] weight, int[] value) {
+        int[] dp = new int[capacity + 1];
+        for (int i = 1; i < kind + 1; i++) {
+            for (int j = capacity; j < weight[i - 1]; j--) {
                 dp[j] = Math.max(dp[j - weight[i - 1]] + value[i - 1], dp[j]);
             }
         }
-        return dp[V];
+        return dp[capacity];
     }
 
     public static void main(String[] args) {
