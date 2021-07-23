@@ -18,16 +18,15 @@ public class CalSuffix {
     }
 
     public int doCalc() {
-        int num1, num2, result;
+        int num1, num2, result = 0;
         for (int i = 0; i < input.length(); i++) {
-
-            char c = input.charAt(i);
-            if (c >= '0' && c <= '9') {
-                myStack.push((int) (c - '0'));//如果是数字，直接压入栈中
+            char s = input.charAt(i);
+            if (s >= '0' && s <= '9') {
+                myStack.push((s - '0'));
             } else {
-                num2 = myStack.pop();//注意先出来的为第二个操作数
+                num2 = myStack.pop();
                 num1 = myStack.pop();
-                switch (c) {
+                switch (s) {
                     case '+':
                         result = num1 + num2;
                         break;
@@ -39,9 +38,6 @@ public class CalSuffix {
                         break;
                     case '/':
                         result = num1 / num2;
-                        break;
-                    default:
-                        result = 0;
                         break;
                 }
                 myStack.push(result);
