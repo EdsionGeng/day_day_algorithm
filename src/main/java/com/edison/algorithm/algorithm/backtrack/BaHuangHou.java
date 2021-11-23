@@ -8,8 +8,8 @@ package com.edison.algorithm.algorithm.backtrack;
  * @create 2021-07-23 16:55
  */
 public class BaHuangHou {
-    private final static int QUEEN_NUM = 8;
-    private static final int[][] checkboard = new int[QUEEN_NUM][QUEEN_NUM];
+    private  static int QUEEN_NUM = 8;
+    private static  int[][] checkboard = new int[QUEEN_NUM][QUEEN_NUM];
     private static int count = 0;
 
     public static void show() {
@@ -48,16 +48,14 @@ public class BaHuangHou {
         for (int i = 0; i < QUEEN_NUM; i++) {
             if (check(row, i)) {
                 checkboard[row][i] = 1;
+                if (row == QUEEN_NUM - 1) {
+                    show();
+                } else {
+                    play(row + 1);
+                }
+                checkboard[row][i] = 0;
             }
-            if (row == QUEEN_NUM - 1) {
-                show();
-            } else {
-                play(row + 1);
-            }
-            checkboard[row][i] = 0;
-
         }
-
     }
 
     public static void main(String[] args) {

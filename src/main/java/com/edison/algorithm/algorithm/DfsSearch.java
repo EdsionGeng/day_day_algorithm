@@ -119,8 +119,6 @@ public class DfsSearch {
                 {1, 1, 0, 0, 1},
                 {0, 0, 1, 0, 0}
         };
-
-
         int[][] graph1 = {
                 {0, 1, 0, 1, 0},
                 {0, 0, 1, 0, 1},
@@ -128,12 +126,7 @@ public class DfsSearch {
                 {1, 1, 0, 0, 1},
                 {0, 0, 1, 0, 0}
         };
-        BFSbyQueue(graph1);
-        System.out.println();
-
         DFSbyStack(graph1);
-
-        System.out.println();
     }
 
 

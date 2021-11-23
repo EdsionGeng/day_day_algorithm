@@ -58,8 +58,6 @@ public class MaxSubArray3 {
     }
 
     public static void main(String[] args) {
-
-
         Integer[] arr = new Integer[]{1, 5, -7, 6, 4, -8};
         Integer[] result = find_maxium_subarray(arr, 0, 5);
 

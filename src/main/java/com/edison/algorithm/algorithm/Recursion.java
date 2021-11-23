@@ -1,7 +1,6 @@
 package com.edison.algorithm.algorithm;
 
 
-
 /**
  * @Description 递归
  * @Date 2020/3/2下午2:43
@@ -25,6 +24,19 @@ public class Recursion {
         return -1;
     }
 
+
+    public static int pow(int i, int n) {
+
+//        for (int j = 1; j < n; j++) {
+//            i = i * temp;
+//        }
+        if (n == 1) {
+            return i;
+        }
+        return i * pow(i, n - 1);
+
+    }
+
     public static int search(int[] array, int key, int high, int low) {
         int mid = (high - low) / 2 + low;
         if (key == array[mid]) {
@@ -43,7 +55,7 @@ public class Recursion {
     }
 
 
-    public static  int searchNoRecursion(int[] array, int key, int low, int high) {
+    public static int searchNoRecursion(int[] array, int key, int low, int high) {
         while (low < high) {
             int mid = (high - low) / 2 + low;
             if (array[mid] == key) {
@@ -83,10 +95,10 @@ public class Recursion {
 
     public static void main(String[] args) {
 
-     //   move(2, "A", "B", "C");
-        System.out.println(getFactorial(4));
-       // int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-       // System.out.println(searchNoRecursion(array,8,0,8));
+        //   move(2, "A", "B", "C");
+        System.out.println(pow(2, 5));
+        // int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        // System.out.println(searchNoRecursion(array,8,0,8));
     }
 
 

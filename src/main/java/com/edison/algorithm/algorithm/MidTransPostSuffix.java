@@ -1,7 +1,5 @@
 package com.edison.algorithm.algorithm;
 
-import com.edison.algorithm.struct.MyStack;
-
 import java.util.Stack;
 
 /**
