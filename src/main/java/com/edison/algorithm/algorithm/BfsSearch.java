@@ -20,10 +20,8 @@ public class BfsSearch {
             Node node = queue.poll();
             //队列头节点出队
             visit(node);
-
             Set<Node> set = node.getSet();
             //获取所有直接关联节点
-
             Iterator<Node> iterator = set.iterator();
             while (iterator.hasNext()) {
                 Node next = iterator.next();
