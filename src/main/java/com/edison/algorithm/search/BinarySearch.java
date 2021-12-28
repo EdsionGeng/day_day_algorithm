@@ -1,4 +1,4 @@
-package com.edison.algorithm.algorithm;
+package com.edison.algorithm.search;
 
 /**
  * @Description 二分查找

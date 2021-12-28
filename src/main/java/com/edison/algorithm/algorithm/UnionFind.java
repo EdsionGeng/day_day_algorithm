@@ -62,4 +62,13 @@ public class UnionFind {
     public int count() {
         return count;
     }
+
+    public static void main(String[] args) {
+        int[] fa = new int[10];
+        int[] rank = new int[10];
+        for (int i = 0; i < fa.length; i++) {
+            fa[i] = i;
+            rank[i] = 1;
+        }
+    }
 }

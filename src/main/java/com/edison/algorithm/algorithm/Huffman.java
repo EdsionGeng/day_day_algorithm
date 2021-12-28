@@ -1,8 +1,6 @@
 package com.edison.algorithm.algorithm;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 描述:
@@ -15,72 +13,82 @@ import java.util.Scanner;
  * @create 2020-04-23 14:19
  */
 public class Huffman {
-    private static LinkedList<HufNode> hufNodeLinkedList = new LinkedList<>();
-
-    class HufNode implements Comparable<HufNode> {
+    public static class Node {
         int value;
-        String name;
-        HufNode Lchild = null;
-        HufNode Rchild = null;
+        Node left;
+        Node right;
+        int deep;
 
-        public HufNode() {
-
+        public Node(int value) {
+            this.value = value;
+            this.deep = 0;
         }
 
-        public HufNode(int v, String s) {
-            value = v;
-            name = s;
+        public Node(Node n1, Node n2, int value) {
+            this.left = n1;
+            this.right = n2;
+            this.value = value;
         }
+    }
 
-        public HufNode(HufNode l, HufNode r) {
-            Lchild = l;
-            Rchild = r;
-            value = Lchild.value + Rchild.value;
-        }
+    private Node root;
+    private List<Node> nodes;
 
-        @Override
-        public int compareTo(HufNode node) {
-            if (value < node.value) {
-                return -1;
-            } else if (value == node.value) {
-                return 0;
+    public Huffman() {
+        this.nodes = null;
+    }
+
+    public Huffman(List<Node> list) {
+        this.nodes = list;
+    }
+
+    public void createTree() {
+        Queue<Node> q1 = new PriorityQueue<>(new Comparator<Node>() {
+            @Override
+            public int compare(Node o1, Node o2) {
+                return o1.value - o2.value;
             }
-            return 1;
+        });
+        q1.addAll(nodes);
+        while (!q1.isEmpty()) {
+            Node n1 = q1.poll();
+            Node n2 = q1.poll();
+            Node parent = new Node(n1, n2, n1.value + n2.value);
+            if (q1.isEmpty()) {
+                root = parent;
+                return;
+            }
+            q1.add(parent);
         }
     }
 
-    public static void hufmanCode() {
-        if (hufNodeLinkedList.size() == 1) {
-            return;
+    public int getWeight() {
+        Queue<Node> q1 = new ArrayDeque<>();
+        q1.add(root);
+        int weight = 0;
+        while (!q1.isEmpty()) {
+            Node va = q1.poll();
+            if (va.left != null) {
+                va.left.deep = va.deep + 1;
+                va.right.deep = va.deep + 1;
+                q1.add(va.left);
+                q1.add(va.right);
+            } else {
+                weight += va.deep * va.value;
+            }
         }
-
-        while (hufNodeLinkedList.size() > 1) {
-            Collections.sort(hufNodeLinkedList);
-            HufNode node = new Huffman().new HufNode(hufNodeLinkedList.get(0), hufNodeLinkedList.get(1));
-            hufNodeLinkedList.remove();
-            hufNodeLinkedList.remove();
-            hufNodeLinkedList.add(node);
-        }
+        return weight;
     }
-
-    public static void decode(HufNode n, String code) {
-        if (n.Lchild == null && n.Rchild == null) {
-            System.out.println("元素值为：" + n.name + " 编码为：" + code);
-            System.out.println();
-            return;
-        }
-        decode(n.Lchild, code + "0");
-        decode(n.Rchild, code + "1");
-        return;
-    }
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int N = scanner.nextInt();
-        for (int i = 0; i < N; i++) {
-            hufNodeLinkedList.add(new Huffman().new HufNode(scanner.nextInt(), scanner.next()));
-        }
-        hufmanCode();
-        decode(hufNodeLinkedList.get(0), "");
+        List<Node>list=new ArrayList<>();
+        list.add(new Node(2));
+        list.add(new Node(3));
+        list.add(new Node(6));
+        list.add(new Node(8));
+        list.add(new Node(9));
+        Huffman tree=new Huffman();
+        tree.nodes=list;
+        tree.createTree();
+        System.out.println(tree.getWeight());
     }
 }

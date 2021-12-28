@@ -1,4 +1,4 @@
-package com.edison.algorithm.algorithm.backtrack;
+package com.edison.algorithm.backtrack;
 
 /**
  * 描述:
