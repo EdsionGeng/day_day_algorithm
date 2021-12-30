@@ -56,7 +56,7 @@ public class HamiltonCircuit {
                 {1,-1,1,-1,1,-1},
                 {-1,-1,1,1,-1,1},
                 {-1,1,-1,-1,1,-1}};
-        System.out.println(adjMatrix[-1]);
+
         test.getHamiltonCircuit(adjMatrix);
     }
 
