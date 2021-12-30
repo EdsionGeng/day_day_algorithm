@@ -33,11 +33,6 @@ public class BfsSearch {
         }
     }
 
-    public void dfs(Node start) {
-        Stack<Node> stack = new Stack<>();
-    }
-
-
     public Node init() {//初始化一个图
         Node nodeA = new Node("A");
         Node nodeB = new Node("B");

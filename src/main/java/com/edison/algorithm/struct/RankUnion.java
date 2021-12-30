@@ -1,6 +1,5 @@
 package com.edison.algorithm.struct;
 
-import sun.security.krb5.internal.PAData;
 
 /**
  * 描述:
