@@ -12,7 +12,7 @@ public class MyLoopQueue<T> {
 
     public MyLoopQueue(int capacity) {
         array = (T[]) new Object[capacity];
-        len = capacity;
+        len = capacity+1;
         begin = 0;
         end = 0;
     }

@@ -9,18 +9,23 @@ public class BubbleSort {
 
     public static int[] sort(int[] array) {
 
+        int arrBoundary = array.length - 1;
+        int lastSwapIndex = 0;
         for (int i = 1; i < array.length; i++) {
-
             boolean flag = true;
-
-            for (int j = 0; j < array.length - i; j++) {
+            for (int j = 0; j < arrBoundary; j++) {
                 if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    array[j + 1] ^= array[j];
+                    array[j] ^= array[j + 1];
+                    array[j + 1] ^= array[j];
+//                    int temp = array[j];
+//                    array[j] = array[j + 1];
+//                    array[j + 1] = temp;
                     flag = false;
+                    lastSwapIndex = j;
                 }
             }
+            arrBoundary = lastSwapIndex;
             if (flag) {
                 break;
             }

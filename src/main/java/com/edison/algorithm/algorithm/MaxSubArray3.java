@@ -61,8 +61,7 @@ public class MaxSubArray3 {
         Integer[] arr = new Integer[]{1, 5, -7, 6, 4, -8};
         Integer[] result = find_maxium_subarray(arr, 0, 5);
 
-        for (Integer i : result
-                ) {
+        for (Integer i : result) {
             System.out.println(i);
         }
 

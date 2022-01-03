@@ -1,4 +1,4 @@
-package com.edison.algorithm.algorithm.backtrack;
+package com.edison.algorithm.backtrack;
 
 /**
  * 描述:
@@ -8,8 +8,8 @@ package com.edison.algorithm.algorithm.backtrack;
  * @create 2021-07-23 16:55
  */
 public class BaHuangHou {
-    private  static int QUEEN_NUM = 8;
-    private static  int[][] checkboard = new int[QUEEN_NUM][QUEEN_NUM];
+    private static int QUEEN_NUM = 8;
+    private static int[][] checkboard = new int[QUEEN_NUM][QUEEN_NUM];
     private static int count = 0;
 
     public static void show() {
@@ -59,7 +59,7 @@ public class BaHuangHou {
     }
 
     public static void main(String[] args) {
-play(0);
+        play(0);
     }
 
 }

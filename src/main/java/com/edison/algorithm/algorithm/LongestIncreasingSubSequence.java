@@ -46,13 +46,36 @@ public class LongestIncreasingSubSequence {
                 ans = dp[i];
             }
 
+
         }
         return ans;
     }
 
+    public static int lengthOfLIS(int[] nums) {
+        int length[] = new int[nums.length];
+        int len = 1;
+        length[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            int left = 0, right = len;
+            while (left < right) {
+                int mid = left + (right - left) / 2;
+                if (length[mid] < nums[i]) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+            length[left] = nums[i];
+            if (right == len) {
+                len++;
+            }
+        }
+        return len;
+    }
+
     public static void main(String[] args) {
-        int[] nums = {5, 4, 1, 2, 3, 1};
-        System.out.println(solution(nums));
+        int[] nums = {2,6,10,11,4,5,6,9};
+        System.out.println(lengthOfLIS(nums));
     }
 
 }
