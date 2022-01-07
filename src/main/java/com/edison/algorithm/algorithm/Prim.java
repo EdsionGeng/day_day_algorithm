@@ -83,8 +83,8 @@ public class Prim {
             }
         });
         for (int i = 0; i < 7; i++) {//['
-            if (city[3][i] != max) {
-                istrue[3] = true;
+            if (city[0][i] != max) {
+                istrue[0] = true;
                 q1.add(new Side(city[3][i], 3, i));
             }
         }
