@@ -19,10 +19,9 @@ public class LeetCode64 {
 
     public static void main(String[] args) {
         int[][] arr = new int[][]{
-                {1, 3, 1
-                }, {1, 5, 1
-        }, {1, 4, 1
-        }
+                {1, 3, 1},
+                {1, 5, 1},
+                {1, 4, 1}
         };
         System.out.println(uniquePaths(arr));
     }
@@ -51,7 +50,6 @@ public class LeetCode64 {
             for (int j = 1; j < n; j++) {
                 dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + arr[i][j];
             }
-
         }
         return dp[m - 1][n - 1];
     }
