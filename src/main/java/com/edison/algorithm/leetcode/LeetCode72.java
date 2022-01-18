@@ -63,14 +63,14 @@ public class LeetCode72 {
         int[][] dp = new int[n1 + 1][n2 + 1];
 
         for (int i = 0; i <= n2; i++) {
-            dp[0][i] = dp[0][i - 1] + 1;
+            dp[0][i] = i;
         }
         for (int i = 0; i <n1; i++) {
-            dp[i][0] = dp[i - 1][0] + 1;
+            dp[i][0] =i;
         }
 
-        for (int i = 0; i <= n1; i++) {
-            for (int j = 0; j <= n2; j++) {
+        for (int i = 1; i <= n1; i++) {
+            for (int j = 1; j <= n2; j++) {
                 //如果word1[i]与word2[j]相等，第i个字符对应下标是i-1
                 if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1];

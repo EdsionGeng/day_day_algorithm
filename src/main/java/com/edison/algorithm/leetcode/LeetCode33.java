@@ -46,7 +46,6 @@ public class LeetCode33 {
                     left = mid + 1;
                 } else {
                     right = mid - 1;
-
                 }
             } else {
                 if (nums[left] <target && target <= nums[mid]) {

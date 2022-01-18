@@ -109,4 +109,15 @@ public class LeetCode68 {
         Arrays.fill(cs, ' ');
         return new String(cs);
     }
+
+    public static void main(String[] args) {
+
+        String[] words = {"Science", "is", "what", "we", "understand", "well", "enough", "to", "explain",
+                "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"};
+        int maxWidth = 20;
+        LeetCode68 leetCode68 = new LeetCode68();
+        leetCode68.fullJustify(words, maxWidth);
+
+
+    }
 }
