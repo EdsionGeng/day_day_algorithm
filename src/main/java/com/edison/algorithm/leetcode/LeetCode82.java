@@ -18,7 +18,7 @@ public class LeetCode82 {
 //
 //输入: 1->1->1->2->3
 //输出: 2->3
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
@@ -27,7 +27,7 @@ public class LeetCode82 {
         }
     }
 
-    public ListNode deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -41,6 +41,25 @@ public class LeetCode82 {
             head.next = deleteDuplicates(next);
         }
         return head;
+    }
+
+    public static ListNode delete(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode next = head.next;
+        return null;
+    }
+
+    public static void main(String[] args) {
+        ListNode listNode = new ListNode(1);
+        listNode.next = new ListNode(1);
+        listNode.next.next = new ListNode(2);
+        listNode.next.next.next = new ListNode(3);
+        listNode.next.next.next.next = new ListNode(4);
+        listNode.next.next.next.next.next = new ListNode(5);
+        ListNode result = deleteDuplicates(listNode);
+        System.out.println(result);
     }
 }
 
