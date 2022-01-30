@@ -48,4 +48,8 @@ public class LeetCode113 {
         }
         return ans;
     }
+
+    public static void main(String[] args) {
+
+    }
 }

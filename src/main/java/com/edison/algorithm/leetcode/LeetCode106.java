@@ -8,7 +8,7 @@ package com.edison.algorithm.leetcode;
  * @create 2022-01-24 15:22
  */
 public class LeetCode106 {
-    //根据一棵树的中序遍历与后序遍历构造二叉树。
+//根据一棵树的中序遍历与后序遍历构造二叉树。
 //
 //注意:
 //你可以假设树中没有重复的元素。
@@ -30,7 +30,7 @@ public class LeetCode106 {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         return helper(inorder, postorder, postorder.length - 1, 0, inorder.length - 1);
     }
-
+    //后序遍历最后一个值先取当根节点
     public TreeNode helper(int[] inorder, int[] postorder, int postEnd, int inStart, int inEnd) {
         if (inStart > inEnd) {
             return null;
