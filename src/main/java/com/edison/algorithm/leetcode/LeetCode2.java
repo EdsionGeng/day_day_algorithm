@@ -25,27 +25,25 @@ public class LeetCode2 {
             int sum = (node1 == null ? 0 : node1.val) + (node2 == null ? 0 : node2.val) + more;
             more = sum / 10;
             sum = sum % 10;
-            ListNode listNode = new ListNode(sum);
-            pre.next = listNode;
-
-            node1 = node1 == null ? null : node1.next;
-            node2 = node2 == null ? null : node2.next;
-            pre = pre.next;
-
+            ListNode node = new ListNode(sum);
+            pre.next = node;
+            node1 = (node1 == null ? null : node1.next);
+            node2 = (node2 == null ? null : node2.next);
+            pre =pre.next;
         }
         return dummy.next;
     }
 
     public static void main(String[] args) {
-        ListNode node1 = new ListNode(2);
-        ListNode node2 = new ListNode(4);
-        ListNode node3 = new ListNode(3);
+        ListNode node1 = new ListNode(8);
+        ListNode node2 = new ListNode(8);
+        ListNode node3 = new ListNode(8);
         node1.setNext(node2);
         node2.setNext(node3);
 
-        ListNode node4 = new ListNode(5);
-        ListNode node5 = new ListNode(6);
-        ListNode node6 = new ListNode(4);
+        ListNode node4 = new ListNode(9);
+        ListNode node5 = new ListNode(9);
+        ListNode node6 = new ListNode(9);
         node4.setNext(node5);
         node5.setNext(node6);
 

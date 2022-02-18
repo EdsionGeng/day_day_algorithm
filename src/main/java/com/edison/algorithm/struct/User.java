@@ -36,7 +36,7 @@ public class User {
         }
         list.add(4);
 //        MyLoopQueue myLoopQueue = new MyLoopQueue();
-//        for (int i = 0; i < 10; i++) {
+//        for (int i = 0; i < 10; i++) { 
 //            User user = new User();
 //            user.setName("" + i);
 //            myLoopQueue.add(user);

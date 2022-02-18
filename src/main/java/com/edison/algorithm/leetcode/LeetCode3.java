@@ -11,9 +11,7 @@ import java.util.Map;
  */
 public class LeetCode3 {
 
-//abcabcd
-
-    //
+    //abcabcd
     public static void main(String[] args) {
         String s = "abcdabcdjklmv";
         System.out.println(lengthOfLongestSubStringHashMap(s));
@@ -21,17 +19,16 @@ public class LeetCode3 {
 
     public static int lengthOfLongestSubStringHashMap(String s) {
         if (s == null || s.length() == 0) return 0;
-        int maxLength = 0;
         Map<Character, Integer> map = new HashMap<>();
+        int res = 0;
         for (int end = 0, start = 0; end < s.length(); end++) {
             if (map.containsKey(s.charAt(end))) {
                 start = Math.max(start, map.get(s.charAt(end)) + 1);
             }
             map.put(s.charAt(end), end);
-            maxLength = Math.max(maxLength, end - start + 1);
-
+            res = Math.max(res, end - start + 1);
         }
-        return maxLength;
+        return res;
     }
 
 
