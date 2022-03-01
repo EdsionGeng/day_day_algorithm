@@ -63,7 +63,6 @@ public class RDBTree<T extends Comparable<T>> {
         Optional<RBNode<T>> nodel = Optional.ofNullable(node);
         if (nodel.isPresent()) {
             nodel.get().color = BLACK;
-
         }
     }
 
