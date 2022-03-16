@@ -76,7 +76,7 @@ public class SkipList {
         }
         if (temp.next[0] != null && temp.next[0].value == value) {
             size--;
-            System.out.println(value + " delete success");
+            System.out.println(value + "delete success");
             for (int i = levelCount - 1; i >= 0; i--) {
                 if (update[i].next[i] != null && update[i].next[i].value == value) {
                     update[i].next[i] = update[i].next[i].next[i];

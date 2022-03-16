@@ -19,21 +19,22 @@ public class BestSchedule {
         for (int i = time.length - 1, j = 0; i >= 0; i--, j++) {
             reverse[j] = time[i];
         }
-        int[] total = {0, 0, 0, 0};
+        int[] total = {0, 0, 0};
         for (int i = 0; i < reverse.length; i++) {
-            int minTime = total[0];
+            int minValue = total[0];
             int k = 0;
             for (int j = 0; j < total.length; j++) {
-                if (minTime > total[j]) {
+                if (minValue > total[j]) {
                     k = j;
-                    minTime = total[j];
+                    minValue = total[j];
                 }
             }
             total[k] += reverse[i];
         }
-        for (int i = 0; i <total.length ; i++) {
+        for (int i = 0; i < total.length; i++) {
             System.out.println(total[i]);
         }
     }
+
 
 }

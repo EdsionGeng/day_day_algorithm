@@ -35,7 +35,6 @@ public class XiongYali {
             p[i] = -1;
         }
         for (int i = 0; i < M; i++) {
-
             boolean[] vis = new boolean[N];
             if (match(i, vis, map, p)) {
                 cnt++;
