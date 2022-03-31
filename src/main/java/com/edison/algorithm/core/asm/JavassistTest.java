@@ -13,7 +13,7 @@ import javassist.CtMethod;
 public class JavassistTest {
     public static void main(String[] args) throws Exception {
         ClassPool cp = ClassPool.getDefault();
-        CtClass cc = cp.get("com/edison/algorithm/core/asm/Base");
+        CtClass cc = cp.get("../com/edison/algorithm/core/asm/Base.class");
         CtMethod method = cc.getDeclaredMethod("process");
         method.insertBefore("\"{ System.out.println(\\\"start\\\"); }\"");
         method.insertAfter("{ System.out.println(\"end\"); }");
