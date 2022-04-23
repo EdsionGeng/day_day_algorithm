@@ -44,8 +44,26 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] array = {4, 2, 8, 9, 5, 7, 6, 1, 3};
-        sort(array);
+//        int[] array = {4, 2, 8, 9, 5, 7, 6, 1, 3};
+//        sort(array);
+//        int w, x, y, z;
+//        int i = 4;
+//        int j = 5;
+//        {
+//            int j = 7;
+//            i = 6;
+//            w = i = j;
+//        }
+//        x = i + j;
+//        {
+//            int i = 8;
+//            y = i + j;
+//        }
+//        z = i + j;
+//        System.out.println(w);
+//        System.out.println(x);
+//        System.out.println(y);
+//        System.out.println(z);
     }
 
 }
