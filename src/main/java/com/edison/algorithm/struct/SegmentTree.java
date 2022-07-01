@@ -53,7 +53,7 @@ public class SegmentTree<E> {
         int leftTreeIndex = leftChild(treeIndex);
         int rightTreeIndex = rightChild(treeIndex);
         int mid = l + (r - l) / 2;
-        buildSegmentTree(leftTreeIndex,  l, mid);
+        buildSegmentTree(leftTreeIndex, l, mid);
         buildSegmentTree(rightTreeIndex, mid + 1, r);
         tree[treeIndex] = merger.merge(tree[leftTreeIndex], tree[rightTreeIndex]);
     }
@@ -105,7 +105,7 @@ public class SegmentTree<E> {
         int rightTreeIndex = rightChild(treeIndex);
 
         if (index > mid) {
-            updateTree(rightTreeIndex, mid + l, r, index, e);
+            updateTree(rightTreeIndex, mid + 1, r, index, e);
         } else {
             updateTree(leftTreeIndex, l, mid, index, e);
         }
@@ -118,7 +118,7 @@ public class SegmentTree<E> {
 
             @Override
             public Integer merge(Integer a, Integer b) {
-                return Math.max(a, b);
+                return (a + b);
             }
         });
         System.out.println(segTree.query(4, 7));

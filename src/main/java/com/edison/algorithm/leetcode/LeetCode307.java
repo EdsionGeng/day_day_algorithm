@@ -1,5 +1,7 @@
 package com.edison.algorithm.leetcode;
 
+import org.omg.CORBA.Object;
+
 import java.util.function.BiFunction;
 
 /**
@@ -34,5 +36,73 @@ public class LeetCode307 {
         private E[] data;
         private E[] tree;
         private BiFunction<E, E, E> function;
+
+        public SegmentTree(E[] arr, BiFunction<E, E, E> function) {
+            data = (E[]) new Object[arr.length];
+            this.function = function;
+            System.arraycopy(arr, 0, data, 0, arr.length);
+            tree = (E[]) new Object[4 * arr.length];
+            buildSegmentTree(0, 0, arr.length - 1);
+        }
+
+        private void buildSegmentTree(int index, int left, int right) {
+            if (left == right) {
+                tree[index] = data[right];
+                return;
+            }
+            int leftIndex = leftChild(index);
+            int rightIndex = rightChild(index);
+            int mid = left + (right - left) / 2;
+            buildSegmentTree(leftIndex, left, mid);
+            buildSegmentTree(rightIndex, mid + 1, right);
+            tree[index] = function.apply(tree[leftIndex], tree[rightIndex]);
+        }
+
+        public E searchRange(int left, int right) {
+            return searchRange(0, 0, data.length - 1, left, right);
+        }
+
+        public E searchRange(int rootIndex, int left, int right, int targetLeft, int targetRight) {
+            if (targetLeft == left && targetRight == right) {
+                return tree[rootIndex];
+            }
+            int mid = left + (right - left) / 2;
+            if (targetLeft > mid) {
+                return searchRange(rightChild(rootIndex), mid + 1, right, targetLeft, targetRight);
+            }
+            if (targetRight <= mid) {
+                return searchRange(leftChild(rootIndex), left, mid, targetLeft, targetRight);
+            }
+            return function.apply(searchRange(leftChild(rootIndex), left, mid, targetLeft, mid),
+                    searchRange(rightChild(rootIndex), mid + 1, right, mid + 1, targetRight));
+        }
+
+        public void update(int index, E e) {
+            if (index < 0 || index >= data.length) {
+                throw new IllegalArgumentException("index illegal");
+            }
+        }
+
+        public void update(int rootIndex, int left, int right, int targetIndex, E e) {
+            if (left == right) {
+                tree[rootIndex] = e;
+                return;
+            }
+            int mid = left + (right - left) / 2;
+            if (targetIndex > mid) {
+                update(rightChild(rootIndex), mid + 1, right, targetIndex, e);
+            } else {
+                update(leftChild(rootIndex), left, mid, targetIndex, e);
+            }
+            tree[rootIndex] = function.apply(tree[leftChild(rootIndex)], tree[rightChild(rootIndex)]);
+        }
+
+        public int leftChild(int root) {
+            return root * 2 + 1;
+        }
+
+        public int rightChild(int root) {
+            return root * 2 + 2;
+        }
     }
 }
