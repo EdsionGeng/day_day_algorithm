@@ -1,4 +1,4 @@
-package com.edison.algorithm.algorithm;
+package com.edison.algorithm.graph;
 
 
 /**
@@ -52,7 +52,7 @@ public class BellmanFord {
         int n = 6;
         int p = 18;
         Edge[] A = new Edge[p];
-        A[0] = new Edge(0, 1, -6);
+        A[0] = new Edge(0, 1, 3);
         A[1] = new Edge(0, 2, 3);
         A[2] = new Edge(1, 2, 2);
         A[3] = new Edge(1, 3, 5);
@@ -61,7 +61,7 @@ public class BellmanFord {
         A[6] = new Edge(3, 4, 2);
         A[7] = new Edge(3, 5, 3);
         A[8] = new Edge(4, 5, 6);
-        A[9] = new Edge(1, 0, -6);
+        A[9] = new Edge(1, 0, 3);
         A[10] = new Edge(2, 0, 3);
         A[11] = new Edge(2, 1, 2);
         A[12] = new Edge(3, 1, 5);

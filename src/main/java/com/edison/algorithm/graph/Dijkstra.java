@@ -1,4 +1,4 @@
-package com.edison.algorithm.algorithm;
+package com.edison.algorithm.graph;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

@@ -1,7 +1,4 @@
-package com.edison.algorithm.algorithm;
-
-import com.edison.algorithm.struct.graph.Edge;
-import com.edison.algorithm.struct.graph.Vertex;
+package com.edison.algorithm.graph;
 
 import java.util.HashMap;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package com.edison.algorithm.struct.graph;
+package com.edison.algorithm.graph;
 
 /**
  * @Description TODO

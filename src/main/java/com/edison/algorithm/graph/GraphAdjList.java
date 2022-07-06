@@ -1,10 +1,9 @@
-package com.edison.algorithm.struct.graph;
+package com.edison.algorithm.graph;
 
 import java.lang.reflect.Array;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
  * 描述:

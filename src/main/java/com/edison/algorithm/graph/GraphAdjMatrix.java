@@ -1,4 +1,4 @@
-package com.edison.algorithm.struct.graph;
+package com.edison.algorithm.graph;
 
 import java.lang.reflect.Array;
 import java.util.LinkedList;
