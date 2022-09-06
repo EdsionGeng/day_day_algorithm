@@ -1,4 +1,4 @@
-package com.edison.algorithm.algorithm;
+package com.edison.algorithm.cache;
 
 import java.util.HashMap;
 import java.util.Iterator;

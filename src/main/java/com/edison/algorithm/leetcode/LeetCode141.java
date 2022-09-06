@@ -11,7 +11,7 @@ import java.util.Map;
  * @create 2022-02-14 17:03
  */
 public class LeetCode141 {
-    class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
@@ -76,6 +76,19 @@ public class LeetCode141 {
             fast = fast.next;
         }
         return team;
+    }
+
+    public static void main(String[] args) {
+        LeetCode141 le = new LeetCode141();
+        ListNode l1 = new ListNode(3);
+
+
+        ListNode l2 = new ListNode(2);
+        l1.next = l2;
+        l1.next.next = new ListNode(0);
+        l1.next.next.next = new ListNode(-4);
+        l1.next.next.next.next = l2;
+        System.out.println(le.detectCycle(l1));
     }
 
 }

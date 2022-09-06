@@ -29,6 +29,6 @@ public class LeetCode205 {
 
     public static void main(String[] args) {
         LeetCode205 le = new LeetCode205();
-        System.out.println(le.isIsomorphic("foo", "baa"));
+        System.out.println(le.isIsomorphic("paper", "title"));
     }
 }

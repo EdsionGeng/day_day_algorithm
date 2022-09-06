@@ -99,5 +99,13 @@ public class Floyd<T> {
         return result;
     }
 
-
+    public static void main(String[] args) {
+        //        for (int i = 0; i < 6; i++) {
+//            for (int j = 0; j < 6; j++) {
+//                for (int k = 0; k < 6; k++) {
+//                    map[j][k] = Math.min(map[j][k], map[j][i] + map[i][k]);
+//                }
+//            }
+//        }
+    }
 }

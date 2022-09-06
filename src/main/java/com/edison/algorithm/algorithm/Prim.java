@@ -105,7 +105,7 @@ public class Prim {
                 } else {
                     istrue[newSide.point2] = true;
                     minlenngth += city[newSide.point1][newSide.point2];
-                    System.out.println(cityname[newSide.point1] + "连通" + cityname[newSide.point2]+ ";距离为:" + city[newSide.point1][newSide.point2]);
+                    System.out.println(cityname[newSide.point1] + "连通" + cityname[newSide.point2] + ";距离为:" + city[newSide.point1][newSide.point2]);
                     for (int i = 0; i < 7; i++) {
                         if (!istrue[i]) {
                             q1.add(new Side(city[newSide.point2][i], newSide.point2, i));
