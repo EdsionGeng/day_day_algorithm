@@ -36,6 +36,26 @@ public class LeetCode62 {
                 }
             }
         }
-        return dp[m - 1][m - 1];
+        return dp[m - 1][n - 1];
+    }
+
+
+    public int uniquePaths2(int m, int n) {
+        int[] dp = new int[n];
+        for (int i = 0; i < n; i++) {
+            dp[i] = 1;
+        }
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < m; j++) {
+                dp[j] += dp[j - 1];
+            }
+        }
+        return dp[n - 1];
+    }
+
+    public static void main(String[] args) {
+        LeetCode62 le = new LeetCode62();
+       System.out.println(le.uniquePaths(3, 3));
+        System.out.println(le.uniquePaths2(3,3));
     }
 }

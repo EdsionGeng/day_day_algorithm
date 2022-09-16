@@ -39,10 +39,10 @@ public class EditDistance {
         }
         System.out.println("----------矩阵打印---------------");
         //矩阵打印
-        for(int i=0;i<sourceLen+1;i++){
+        for (int i = 0; i < sourceLen + 1; i++) {
 
-            for(int j=0;j<targetLen+1;j++){
-                System.out.print(arr[i][j]+"\t");
+            for (int j = 0; j < targetLen + 1; j++) {
+                System.out.print(arr[i][j] + "\t");
             }
             System.out.println();
         }
@@ -50,7 +50,29 @@ public class EditDistance {
         return arr[sourceLen][targetLen];
     }
 
-    public static double getsimilarity(String str1, String str2) {
+
+    public static int minDistance2(String src, String target) {
+        int srcLen = src.length();
+        int tarLen = target.length();
+        int[][] find = new int[26][200];
+        int[] len = new int[26];
+        int[] part = new int[200];
+        for (int i = 0; i < srcLen; i++) {
+            find[src.charAt(i) - 'a'][len[src.charAt(i) - 'a']++] = i + 1;
+        }
+        int pre_cn = 0, next_cn = 1, min_v = srcLen;
+        return -1;
+
+    }
+
+    public int loc(int[][] find, int[] len, int ch, int pos) {
+        for (int i = 0; i < len[ch]; i++) {
+            if (find[ch][i] >= pos) return find[ch][i];
+        }
+        return -1;
+    }
+
+    public static double getSimilarity(String str1, String str2) {
         double distance = minDistance(str1, str2);
         double maxlen = Math.max(str1.length(), str2.length());
         double res = (maxlen - distance) / maxlen;
@@ -59,7 +81,7 @@ public class EditDistance {
     }
 
     public static String evaluate(String str1, String str2) {
-        double result = getsimilarity(str1, str2);
+        double result = getSimilarity(str1, str2);
         return String.valueOf(result);
     }
 

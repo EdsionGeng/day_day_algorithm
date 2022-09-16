@@ -88,7 +88,7 @@ public class LeetCode72 {
         int n2 = word2.length();
         int[] dp = new int[n2 + 1];
         //dp[0...n2] init value
-        for (int i = 0; i <= n2; i++) {
+        for (int i = 1; i <= n2; i++) {
             dp[i] = i;
         }
         //formula:dp[j]=min(dp[j-1],pre,dp[j])+1
@@ -97,7 +97,7 @@ public class LeetCode72 {
             int temp = dp[0];
             //init
             dp[0] = i;
-            for (int j = 0; j <= n2; j++) {
+            for (int j = 1; j <= n2; j++) {
                 //pre相当于之前的dp[i-1][j-1]
                 int pre = temp;
                 temp = dp[j];
