@@ -42,9 +42,7 @@ public class LeetCode295 {
 
     public LeetCode295() {
         min = new PriorityQueue<>();
-        max = new PriorityQueue<>((a, b) -> {
-            return b - a;
-        });
+        max = new PriorityQueue<>((a, b) -> b - a);
 
     }
 
@@ -66,7 +64,9 @@ public class LeetCode295 {
         LeetCode295 le = new LeetCode295();
         le.addNum(2);
         le.addNum(3);
+        System.out.println(le.findMedian());
         le.addNum(4);
+        System.out.println(le.findMedian());
         le.addNum(5);
         System.out.println(le.findMedian());
     }

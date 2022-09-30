@@ -35,10 +35,10 @@ public class QuickSort {
         int i = left, j = right + 1;
         int pivot = array[left];
         while (true) {
-            while (i < right && array[++i] < pivot) {
+            while (i <= right && array[++i] < pivot) {
 
             }
-            while (j > 0 && array[--j] > pivot) {
+            while (j >= left && array[--j] > pivot) {
 
             }
             if (i >= j) {

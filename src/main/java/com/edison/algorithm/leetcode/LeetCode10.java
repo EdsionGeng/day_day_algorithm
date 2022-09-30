@@ -81,4 +81,11 @@ public class LeetCode10 {
         }
         return memory[cur][pLen];
     }
+
+    public static void main(String[] args) {
+        LeetCode10 le = new LeetCode10();
+        System.out.println(le.isMatch("ab",".*"));
+        System.out.println(le.isMatch("aab","c*a*b"));
+        System.out.println(le.isMatch("mississippi","mis*is*p*."));
+    }
 }

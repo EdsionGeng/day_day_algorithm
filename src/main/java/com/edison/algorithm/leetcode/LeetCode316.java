@@ -1,6 +1,7 @@
 package com.edison.algorithm.leetcode;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * @Description TODO
@@ -32,7 +33,7 @@ public class LeetCode316 {
         for (char c : sChars) {
             charsCount[c - 'a']++;
         }
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
         int index = 0;
         for (int count : charsCount) {
             if (count > 0) {
@@ -62,9 +63,35 @@ public class LeetCode316 {
         return String.valueOf(res);
     }
 
+    public String solution2(String s) {
+        boolean[] vis = new boolean[26];
+        int[] num = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            num[s.charAt(i) - 'a']++;
+        }
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (!vis[ch - 'a']) {
+                while (sb.length() > 0 && sb.charAt(sb.length() - 1) > ch) {
+                    if (num[sb.charAt(sb.length() - 1) - 'a'] > 0) {
+                        vis[sb.charAt(sb.length() - 1) - 'a'] = false;
+                        sb.deleteCharAt(sb.length() - 1);
+                    } else {
+                        break;
+                    }
+                }
+                vis[ch - 'a'] = true;
+                sb.append(ch);
+            }
+            num[ch - 'a']--;
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
         LeetCode316 le = new LeetCode316();
-        System.out.println(le.removeDuplicateLetters("cbacdcbc"));
+        System.out.println(le.solution2("cbacdcbc"));
 
     }
 }
