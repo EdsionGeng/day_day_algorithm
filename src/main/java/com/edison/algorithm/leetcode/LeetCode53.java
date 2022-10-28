@@ -34,4 +34,20 @@ public class LeetCode53 {
         }
         return res;
     }
+
+    public static int maxSubArray3(int[] nums) {
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        int sum = 0;
+        for (int i = 1; i < nums.length; i++) {
+
+
+
+        }
+        return dp[nums.length - 1];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(maxSubArray3(new int[]{3, 2, -4, 2, 7}));
+    }
 }

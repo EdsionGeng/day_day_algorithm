@@ -10,25 +10,25 @@ import java.util.Stack;
  * @create 2022-02-23 11:32
  */
 public class LeetCode155 {
-    class MinStack {
-        private int min = Integer.MAX_VALUE;
+    static class MinStack {
+
         private Stack<Integer> stack;
+        private Stack<Integer> minStack;
 
         public MinStack() {
             this.stack = new Stack<>();
+            this.minStack = new Stack<>();
+            minStack.push(Integer.MAX_VALUE);
         }
 
         public void push(int x) {
-            if (min > x) {
-                min = x;
-            }
             stack.push(x);
+            minStack.push(Math.min(minStack.peek(), x));
         }
 
         public void pop() {
-            if (stack.pop() == min) {
-                min = stack.pop();
-            }
+            stack.pop();
+            minStack.pop();
         }
 
         public int top() {
@@ -36,8 +36,18 @@ public class LeetCode155 {
         }
 
         public int getMin() {
-            return min;
+            return minStack.peek();
         }
     }
 
+    public static void main(String[] args) {
+        MinStack minStack = new MinStack();
+        minStack.push(-3);
+        minStack.push(-3);
+        minStack.push(-2);
+        System.out.println(minStack.getMin());
+        minStack.pop();
+        System.out.println(minStack.top());
+        System.out.println(minStack.getMin());
+    }
 }

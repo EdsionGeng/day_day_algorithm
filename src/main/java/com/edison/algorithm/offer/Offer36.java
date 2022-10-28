@@ -1,7 +1,7 @@
 package com.edison.algorithm.offer;
 
-import com.edison.algorithm.leetcode.LeetCode426;
 
+//二叉搜索树 与双向链表
 public class Offer36 {
     static class Node {
         public int val;

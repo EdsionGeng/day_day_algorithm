@@ -37,6 +37,6 @@ public class LeetCode8 {
     }
 
     public static void main(String[] args) {
-        System.out.println(myAtoi("-4193 with words"));
+        System.out.println(myAtoi("-91283472332"));
     }
 }

@@ -18,7 +18,7 @@ public class LeetCode70 {
             int k = 3;
             int i = 1, j = 2;
             while (k <= n) {
-                res = i + j;
+                res = (i + j)%1000000007;
                 i = j;
                 j = res;
                 k++;
