@@ -8,7 +8,9 @@ package com.edison.algorithm.leetcode;
  * @Date 2020/6/5下午10:12
  * @Created by edsiongeng
  */
-public class LeetCode4 {
+public class
+
+LeetCode4 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int leftLength = nums1.length;
         int rightLength = nums2.length;

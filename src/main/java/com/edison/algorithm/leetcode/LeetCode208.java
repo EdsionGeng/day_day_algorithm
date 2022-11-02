@@ -7,7 +7,9 @@ package com.edison.algorithm.leetcode;
  * @author gengyc
  * @create 2022-03-02 14:20
  */
-public class LeetCode208 {
+public class
+
+LeetCode208 {
     class Trie {
         class Node {
             boolean isWord;

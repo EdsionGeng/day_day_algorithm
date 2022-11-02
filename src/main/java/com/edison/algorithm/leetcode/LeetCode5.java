@@ -22,13 +22,32 @@ public class LeetCode5 {
         return s.substring(range[0], range[1] + 1);
     }
 
+    public static String longestPalindrome2(String s) {
+        String res = "";
+        for (int i = 0; i < s.length(); i++) {
+            String s1 = huiwen(s, i, i);
+            String s2 = huiwen(s, i, i + 1);
+            res = res.length() > s1.length() ? res : s1;
+            res = res.length() > s2.length() ? res : s2;
+        }
+        return res;
+    }
+
+    public static String huiwen(String str, int l, int r) {
+        while (l >= 0 && r < str.length() && str.charAt(l) == str.charAt(r)) {
+            l--;
+            r++;
+        }
+        return str.substring(l + 1, r);
+    }
+
     public static int findLongest(char[] str, int low, int[] range) {
         int high = low;
         while (high < str.length - 1 && str[high + 1] == str[low]) {
             high++;
         }
         int ans = high;
-        while (low > 0 && high < str.length-1 && str[low - 1] == str[high + 1]) {
+        while (low > 0 && high < str.length - 1 && str[low - 1] == str[high + 1]) {
             low--;
             high++;
         }
