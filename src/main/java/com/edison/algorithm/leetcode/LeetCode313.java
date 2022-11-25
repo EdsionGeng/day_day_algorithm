@@ -1,5 +1,8 @@
 package com.edison.algorithm.leetcode;
 
+
+import java.util.PriorityQueue;
+
 /**
  * @Description TODO
  * @Date 2022/5/13下午3:56
@@ -23,8 +26,16 @@ public class LeetCode313 {
     //0 < k ≤ 100, 0 < n ≤ 106, 0 < primes[i] < 1000 。
     //第 n 个超级丑数确保在 32 位有符整数范围内。
     public int nthSuperUglyNumber(int n, int[] primes) {
-        int[] uglyNumbers = new int[n];
-        uglyNumbers[0]=1;
-        return 0;
+        PriorityQueue<Integer> q = new PriorityQueue();
+        q.add(1);
+        while (n-- > 0) {
+            int x = q.poll();
+            if (n == 0) return x;
+            for (int k : primes) {
+                if (k <= Integer.MAX_VALUE / x) q.add(k * x);
+                if (x % k == 0) break;
+            }
+        }
+        return -1;
     }
 }

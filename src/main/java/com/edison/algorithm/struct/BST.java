@@ -56,7 +56,6 @@ public class BST {
             Node minNode = getMinNode(root.right);
             root.val = minNode.val;
             deleteNode(root.right, minNode.val);
-
         } else if (root.val > key) {
             root.left = deleteNode(root.left, key);
         } else if (root.val < key) {

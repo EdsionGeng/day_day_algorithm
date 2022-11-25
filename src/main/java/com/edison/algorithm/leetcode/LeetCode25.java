@@ -98,16 +98,12 @@ public class LeetCode25 {
     public static ListNode reverse(ListNode head) {
         ListNode prev = null;
         ListNode cur = head;
-        ListNode next = null;
+
         while (cur != null) {
-            //   next = cur.next;
-            //                cur.next = prev;
-            //                prev = cur;
-            //                cur = next;
-            next = cur.next;
+            ListNode temp = cur.next;
             cur.next = prev;
             prev = cur;
-            cur = next;
+            cur = temp;
         }
         return prev;
 
@@ -124,7 +120,8 @@ public class LeetCode25 {
         node3.next = node4;
         node4.next = node5;
 
-        reverse(node1);
-        reverseKGroup(node1, 3);
+        //reverse(node1);
+        ListNode result=reverseKGroup(node1, 3);
+
     }
 }

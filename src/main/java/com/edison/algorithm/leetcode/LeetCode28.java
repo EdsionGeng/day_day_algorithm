@@ -35,13 +35,15 @@ public class LeetCode28 {
         int j = -1;
         while (i < target.length() - 1) {
             if (j == -1 || target.charAt(i) == target.charAt(j)) {
-                i++;
-                j++;
-                next[i] = j;
+                next[++i] = ++j;
             } else {
                 j = next[j];
             }
         }
     }
 
+    public static void main(String[] args) {
+        LeetCode28 le = new LeetCode28();
+        System.out.println(le.strStr("hello", "ll"));
+    }
 }

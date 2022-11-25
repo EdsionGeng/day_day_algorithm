@@ -1,7 +1,5 @@
 package com.edison.algorithm.leetcode;
 
-import java.util.Arrays;
-
 /**
  * @Description 戳气球
  * @Date 2022/4/26下午1:52
@@ -18,7 +16,6 @@ public class LeetCode312 {
             res = maxleft + maxRight + nums[from - 1] * nums[i] * nums[to + 1];
             max = Math.max(max, res);
         }
-
         dp[from][to] = max;
 
     }

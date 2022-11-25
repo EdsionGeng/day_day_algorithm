@@ -17,7 +17,7 @@ public class LeetCode318 {
             for (int j = 1; j < n; j++) {
                 if ((wordsBit[i] & wordsBit[j]) == 0) {
                     int newLength = words[i].length() * words[j].length();
-                    max = max < newLength ? newLength : max;
+                    max = Math.max(max,newLength);
                 }
             }
         }

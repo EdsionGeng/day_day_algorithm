@@ -51,6 +51,6 @@ public class LeetCode105 {
 
     public static void main(String[] args) {
         LeetCode105 le = new LeetCode105();
-        le.buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
+        TreeNode root=le.buildTree(new int[]{4, 9, 20, 15, 7}, new int[]{9, 4, 15, 20, 7});
     }
 }

@@ -16,4 +16,9 @@ public class 回文子串次数 {
         }
         return ans;
     }
+
+    public static void main(String[] args) {
+        回文子串次数 le=new 回文子串次数();
+        System.out.println(le.countSubstrings("aaa"));
+    }
 }

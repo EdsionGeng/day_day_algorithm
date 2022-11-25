@@ -67,4 +67,9 @@ public class LeetCode130 {
         dfs(board, i, j + 1);
         return;
     }
+
+    public static void main(String[] args) {
+        LeetCode130 le = new LeetCode130();
+        le.solve(new char[][]{{'X', 'X', 'X', 'X' }, {'X', 'O', 'O', 'X' }, {'X', 'O', 'O', 'X' }, {'X', 'O', 'X', 'X' }});
+    }
 }

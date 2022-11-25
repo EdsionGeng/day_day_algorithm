@@ -12,7 +12,7 @@ public class LeetCode260 {
         for (int num : nums) {
             key ^= num;
         }
-        key = key & (-key);
+        key = key == Integer.MIN_VALUE ? key : key & (-key);
         int[] res = new int[2];
         for (int num : nums) {
             if ((num & key) == 0) {
@@ -27,6 +27,10 @@ public class LeetCode260 {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 1, 2, 5};
         LeetCode260 le = new LeetCode260();
-        le.singleNumber(nums);
+        int[] res = le.singleNumber(nums);
+        for (int i : res
+        ) {
+            System.out.println(i);
+        }
     }
 }

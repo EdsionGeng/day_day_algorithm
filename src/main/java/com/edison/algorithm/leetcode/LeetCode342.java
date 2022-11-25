@@ -27,14 +27,13 @@ package com.edison.algorithm.leetcode;
 public class LeetCode342 {
     public boolean isPowerOfFour(int num) {
         int x = 0x55555555;
-        System.out.println((num & (num - 1)) == 0);
-        System.out.println((num & x) == num);
-        return (num > 0) && ((num & (num - 1)) == 0) & ((num & x) == num);
+//        System.out.println((num & (num - 1)) == 0);
+//        System.out.println((num & x) == num);
+        return (num > 0) && ((num & (num - 1)) == 0) & ((num &0x55555555) != 0);
     }
 
     public static void main(String[] args) {
-
         LeetCode342 le = new LeetCode342();
-        le.isPowerOfFour(64);
+        System.out.println(le.isPowerOfFour(256));
     }
 }

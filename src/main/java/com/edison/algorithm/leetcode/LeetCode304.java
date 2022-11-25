@@ -31,7 +31,7 @@ public class LeetCode304 {
     //版权声明：本文为CSDN博主「普通网友」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
     //原文链接：https://blog.csdn.net/a1439775520/article/details/104681875
 
-    class NumMatrix {
+    static class NumMatrix {
         int[][] data = new int[127][127];
 
         public NumMatrix(int[][] matrix) {
@@ -41,9 +41,7 @@ public class LeetCode304 {
                     for (int j = 1; j <= matrix[0].length; j++) {
                         sum += matrix[i][j - 1];
                         data[i][j] = sum;
-
                     }
-
                 }
             }
 
@@ -57,5 +55,15 @@ public class LeetCode304 {
             }
             return sum;
         }
+    }
+
+    public static void main(String[] args) {
+        int[][] matrix = new int[][]{{3, 0, 1, 4, 2},
+                {5, 6, 3, 2, 1},
+                {1, 2, 0, 1, 5},
+                {4, 1, 0, 1, 7},
+                {1, 0, 3, 0, 5}};
+        NumMatrix numMatrix = new NumMatrix(matrix);
+        System.out.println(numMatrix.sumRegion(2, 1, 4, 3));
     }
 }

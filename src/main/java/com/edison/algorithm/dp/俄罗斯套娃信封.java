@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 //二维数组，长和宽均大于上一个套娃
-public class 俄罗斯套娃信封 {
+public class  俄罗斯套娃信封 {
 
     public static int maxEnvelopes(int[][] envelopes) {
         int[] dp = new int[envelopes.length];

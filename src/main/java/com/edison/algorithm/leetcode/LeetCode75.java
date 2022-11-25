@@ -23,24 +23,30 @@ public class LeetCode75 {
 //
 //一个直观的解决方案是使用计数排序的两趟扫描算法。
 //首先，迭代计算出0、1 和 2 元素的个数，然后按照0、1、2的排序，重写当前数组。
-    public void sortColors(int[] nums) {
+    public int[] sortColors(int[] nums) {
         int low = 0, high = nums.length - 1;
         int i = 0;
         while (i <= high) {
             if (nums[i] == 0) {
-                int temp = nums[i];
-                nums[i] = nums[low];
-                nums[low] = temp;
-                ++low;
-                ++i;
-            }else if(nums[i]==1){
-                ++i;
-            }else if(i<=high&&nums[i]==2){
-                int temp=nums[i];
-                nums[i] =nums[high];
-                nums[high]=temp;
-                --high;
+                int temp = nums[low];
+                nums[low] = nums[i];
+                nums[i] = temp;
+                low++;
+                i++;
+            } else if (nums[i] == 1) {
+                i++;
+            } else {
+                int temp = nums[high];
+                nums[high] = nums[i];
+                nums[i] = temp;
+                high--;
             }
         }
+        return nums;
+    }
+
+    public static void main(String[] args) {
+        LeetCode75 le = new LeetCode75();
+        System.out.println(le.sortColors(new int[]{2, 0, 2, 1, 1, 0}));
     }
 }

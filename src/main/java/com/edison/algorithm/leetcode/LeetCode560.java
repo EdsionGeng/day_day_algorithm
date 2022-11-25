@@ -13,16 +13,14 @@ public class LeetCode560 {
         int preSum = 0;
         for (int num : nums) {
             preSum += num;
-            if (map.containsKey( preSum-k)) {
-                count += map.get( preSum-k);
+            if (map.containsKey(preSum - k)) {
+                count += map.get(preSum - k);
             }
             map.put(preSum, map.getOrDefault(preSum, 0) + 1);
 
         }
         return count;
     }
-
-
 
 
     public static void main(String[] args) {

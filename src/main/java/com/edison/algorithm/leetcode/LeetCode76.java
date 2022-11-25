@@ -89,6 +89,36 @@ public class LeetCode76 {
 
     }
 
+    public String minWindow3(String s, String t) {
+        int[] chars = new int[128];
+        boolean[] flag = new boolean[128];
+
+        for (int i = 0; i < t.length(); i++) {
+            chars[t.charAt(i)]++;
+            flag[t.charAt(i)] = true;
+        }
+        int cnt = 0, l = 0, minL = 0, minSize = s.length();
+        for (int r = 0; r < s.length(); r++) {
+            if (flag[s.charAt(r)]) {
+                if (--chars[s.charAt(r)] >= 0) {
+                    ++cnt;
+                }
+                while (cnt == t.length()) {
+                    if (r - l + 1 < minSize) {
+                        minL = l;
+                        minSize = minL+r - l + 1;
+                    }
+                    if (flag[s.charAt(l)] && ++chars[s.charAt(l)] > 0) {
+                        --cnt;
+                    }
+                    ++l;
+                }
+            }
+
+        }
+        return minSize > s.length() ? "" : s.substring(minL, minSize);
+    }
+
     public boolean check2() {
         Iterator iter = ori.entrySet().iterator();
         while (iter.hasNext()) {
@@ -114,7 +144,7 @@ public class LeetCode76 {
 
     public static void main(String[] args) {
         LeetCode76 leetCode76 = new LeetCode76();
-        System.out.println(leetCode76.minWindow2("ADOBECODEBANC", "ABC"));
+        System.out.println(leetCode76.minWindow3("ADOBECODEBANCE", "ABC"));
 
     }
 }

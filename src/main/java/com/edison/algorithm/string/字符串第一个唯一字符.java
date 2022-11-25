@@ -18,7 +18,7 @@ public class 字符串第一个唯一字符 {
         }
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
             if (entry.getValue() != -1) {
-                return entry.getValue();
+                return entry.getKey();
             }
         }
         return -1;
