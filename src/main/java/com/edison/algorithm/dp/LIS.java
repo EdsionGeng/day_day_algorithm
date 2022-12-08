@@ -66,7 +66,6 @@ public class LIS {
                 }
             }
             maxNum = Math.max(dp[i], maxNum);
-
         }
         for (int i = 0; i < n; i++) {
             if (dp[i] == maxNum) ans += count[i];

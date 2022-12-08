@@ -1,6 +1,5 @@
 package com.edison.algorithm.leetcode;
 
-import com.edison.algorithm.struct.MaxHeap;
 
 import java.util.Stack;
 
@@ -56,6 +55,6 @@ public class LeetCode85 {
     public static void main(String[] args) {
         char[][] c = new char[][]{{1, 0, 1, 0, 0}, {1, 0, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 0, 0, 1, 0}};
         LeetCode85 leetCode85 = new LeetCode85();
-        leetCode85.maximalRectangle(c);
+        System.out.println(leetCode85.maximalRectangle(c));
     }
 }

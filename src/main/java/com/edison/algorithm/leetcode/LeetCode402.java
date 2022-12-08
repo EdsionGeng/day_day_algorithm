@@ -19,8 +19,10 @@ public class LeetCode402 {
             }
             stk.addLast(c);
         }
+
         String res = stk.stream().map(Objects::toString).collect(Collectors.joining());
-        res = res.substring(0, res.length() - k).replaceAll("^0+", "");
+        res = res.substring(0, res.length() - k);
+        res = res.replaceAll("^0+", "");
         return res.isEmpty() ? "0" : res;
 
     }

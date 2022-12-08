@@ -10,7 +10,6 @@ import java.util.LinkedList;
 public class LeetCode239 {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
-
         if (nums == null || nums.length < 2) return nums;
         LinkedList<Integer> list = new LinkedList<>();
         int[] result = new int[nums.length - k + 1];

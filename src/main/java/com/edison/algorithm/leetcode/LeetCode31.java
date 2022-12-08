@@ -46,7 +46,7 @@ public class LeetCode31 {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 2,5};
+        int[] nums = new int[]{1, 2,5,3};
         nextPermutation(nums);
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i]);

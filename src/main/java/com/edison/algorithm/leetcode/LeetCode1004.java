@@ -14,6 +14,6 @@ public class LeetCode1004 {
 
     public static void main(String[] args) {
         LeetCode1004 le = new LeetCode1004();
-        System.out.println(le.longestOnes(new int[]{0, 0, 0, 0}, 0));
+        System.out.println(le.longestOnes(new int[]{0, 1, 1, 0,1,1,1,0,1,1,1,1}, 0));
     }
 }

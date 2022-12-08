@@ -1,5 +1,7 @@
 package com.edison.algorithm.leetcode;
 
+import java.io.LineNumberReader;
+
 /**
  * 拼接最大数
  */
@@ -40,5 +42,14 @@ public class LeetCode321 {
             j++;
         }
         return j == nums2.length || (i < nums1.length && nums1[i] > nums2[j]);
+    }
+
+    public static void main(String[] args) {
+        LeetCode321 le = new LeetCode321();
+        int[] res = le.maxNumber(new int[]{3, 4, 6, 5}, new int[]{9, 1, 2, 5, 8, 3}, 5);
+        for (int i : res) {
+            System.out.print(i+" ");
+        }
+
     }
 }

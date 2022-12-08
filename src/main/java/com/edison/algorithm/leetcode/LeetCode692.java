@@ -34,7 +34,7 @@ public class LeetCode692 {
     public static void main(String[] args) {
         LeetCode692 le = new LeetCode692();
         List<String> res = le.topKFrequent(new String[]{"day", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"
-        }, 4);
+        }, 2);
         for (String str : res) {
             System.out.println(str);
         }

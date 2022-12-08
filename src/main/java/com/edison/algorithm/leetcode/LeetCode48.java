@@ -29,16 +29,4 @@ public class LeetCode48 {
 
     }
 
-    public void rotate2(int[][] matrix) {
-        int temp = 0, n = matrix.length - 1;
-        for (int i = 0; i <= n / 2; i++) {
-            for (int j = i; j < n - i; j++) {
-                temp = matrix[j][n - i];
-
-
-            }
-
-        }
-    }
-
 }

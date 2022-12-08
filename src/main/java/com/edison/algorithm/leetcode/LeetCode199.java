@@ -1,5 +1,7 @@
 package com.edison.algorithm.leetcode;
 
+import com.edison.algorithm.struct.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,15 +21,7 @@ public class LeetCode199 {
 //
 //输入: [1,2,3,null,5,null,4]
 //输出: [1, 3, 4]
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> res = new ArrayList<>();
@@ -77,7 +71,7 @@ public class LeetCode199 {
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
         root.left.right = new TreeNode(5);
-        List<Integer> res = le.rightSideView(root);
+        List<Integer> res = le.rightSideView2(root);
         for (Integer i : res) {
             System.out.println(i);
         }

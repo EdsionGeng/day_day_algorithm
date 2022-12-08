@@ -54,7 +54,7 @@ public class LeetCode56 {
     }
 
     public static void main(String[] args) {
-        merge(new int[][]{{1,4},{4,5}});
+        merge(new int[][]{{1,4},{4,5},{3,6}});
     }
 
 }

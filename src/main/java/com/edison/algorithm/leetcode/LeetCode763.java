@@ -50,4 +50,9 @@ public class LeetCode763 {
         return list;
 
     }
+
+    public static void main(String[] args) {
+        LeetCode763 le = new LeetCode763();
+        le.partitionLabels("ababcbacadefegdehijhklij");
+    }
 }

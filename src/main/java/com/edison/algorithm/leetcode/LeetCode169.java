@@ -24,4 +24,8 @@ public class LeetCode169 {
         return maj;
     }
 
+    public static void main(String[] args) {
+
+    }
+
 }

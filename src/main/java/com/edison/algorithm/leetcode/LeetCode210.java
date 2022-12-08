@@ -45,7 +45,7 @@ public class LeetCode210 {
 //版权声明：本文为CSDN博主「南     墙」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
 //原文链接：https://blog.csdn.net/a1439775520/article/details/104519278
     public int[] findOrder(int numCourses, int[][] prerequisties) {
-        List<Integer> results = new ArrayList<>();
+        int[] results = new int[numCourses];
         int[] degree = new int[numCourses];
         List<List<Integer>> edges = new ArrayList<>(numCourses);
         for (int i = 0; i < numCourses; i++) {
@@ -63,9 +63,10 @@ public class LeetCode210 {
                 ((LinkedList<Integer>) queue).add(i);
             }
         }
+        int index = 0;
         while (!queue.isEmpty()) {
             int course = queue.poll();
-            results.add(course);
+            results[index++] = course;
             count++;
             for (Integer c : edges.get(course)) {
                 degree[c]--;
@@ -77,11 +78,7 @@ public class LeetCode210 {
         if (count != numCourses) {
             return new int[0];
         }
-        int[] res = new int[numCourses];
-        for (int i = 0; i < numCourses; i++) {
-            res[i] = results.get(i);
-        }
-        return res;
+        return results;
     }
 
     public static void main(String[] args) {
