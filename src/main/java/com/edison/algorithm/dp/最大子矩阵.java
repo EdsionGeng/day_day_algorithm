@@ -38,8 +38,7 @@ public class 最大子矩阵 {
 
     public static void main(String[] args) {
         int[] matrix = getMaxMatrix(new int[][]{{1, 2}, {3, 4}});
-        for (int i:matrix
-             ) {
+        for (int i : matrix) {
             System.out.println(i);
         }
     }

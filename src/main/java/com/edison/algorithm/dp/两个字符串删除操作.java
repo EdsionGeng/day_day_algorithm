@@ -2,7 +2,7 @@ package com.edison.algorithm.dp;
 
 public class 两个字符串删除操作 {
 
-    public int minDistance(String word1, String word2) {
+    public static int minDistance(String word1, String word2) {
         int[] dp = new int[word2.length() + 1];
         for (int i = 0; i <= word1.length(); i++) {
             int[] temp = new int[word2.length() + 1];
@@ -17,5 +17,11 @@ public class 两个字符串删除操作 {
             dp = temp;
         }
         return dp[word2.length()];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(minDistance("sea","eat"));
+        System.out.println(minDistance("leetcode","etco"));
+
     }
 }

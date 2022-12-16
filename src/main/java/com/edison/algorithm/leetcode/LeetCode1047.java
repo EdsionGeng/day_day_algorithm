@@ -1,9 +1,5 @@
 package com.edison.algorithm.leetcode;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Stack;
-
 //删除字符串相邻重复项
 public class LeetCode1047 {
 
@@ -20,13 +16,11 @@ public class LeetCode1047 {
                 ++top;
             }
         }
-
         return stack.toString();
-
     }
 
     public static void main(String[] args) {
         LeetCode1047 le = new LeetCode1047();
-        le.removeDuplicates("abbaca");
+        System.out.println(le.removeDuplicates("abbaca"));
     }
 }

@@ -22,8 +22,6 @@ public class 三角形最小路径和 {
         }
         res += min;
         dfs(list, level + 1);
-
-
     }
 
     public int minmumTotal2(int[][] triangle) {

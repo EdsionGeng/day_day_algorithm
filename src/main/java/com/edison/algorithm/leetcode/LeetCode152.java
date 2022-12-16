@@ -34,4 +34,10 @@ public class LeetCode152 {
         }
         return max;
     }
+
+
+    public static void main(String[] args) {
+        LeetCode152 le = new LeetCode152();
+        System.out.println(le.maxProduct(new int[]{2, 3, -2, 4}));
+    }
 }

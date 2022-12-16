@@ -107,7 +107,7 @@ public class SpaceIndex {
          */
         public int delete(Rectangle rectangle) {
             if (rectangle == null) {
-                throw new IllegalArgumentException("Rectangle cannot be null.");
+                throw new IllegalArgumentException("Rectangle can not be null.");
             }
 
             if (rectangle.getHigh().getDimension() != getDimension()) {

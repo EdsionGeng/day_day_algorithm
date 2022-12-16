@@ -2,7 +2,7 @@ package com.edison.algorithm.dp;
 
 public class 删除与获得点数 {
 
-    public int deleteAndEarn(int[] nums) {
+    public static int deleteAndEarn(int[] nums) {
         if (nums.length == 1) return nums[0];
         int max = nums[0];
         int len = nums.length;
@@ -19,10 +19,9 @@ public class 删除与获得点数 {
             dp[i] = Math.max(dp[i - 1], dp[i - 2] + all[i] * i);
         }
         return dp[max];
-
     }
 
     public static void main(String[] args) {
-
+        System.out.println(deleteAndEarn(new int[]{2, 2, 3, 3, 3, 4}));
     }
 }
