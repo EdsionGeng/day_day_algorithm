@@ -64,8 +64,8 @@ public class LeetCode91 {
 
     public static void main(String[] args) {
         LeetCode91 le = new LeetCode91();
-        le.numDecodings("13");
-        le.numDecodings2("13");
+
+        System.out.println(le.numDecodings2("226"));
     }
 
 }

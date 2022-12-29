@@ -1,7 +1,7 @@
 package com.edison.algorithm.offer;
 
 //链表倒数第k个节点
-public class Offer22 {
+public class  Offer22 {
     static class ListNode {
         int val;
         ListNode next;

@@ -32,19 +32,19 @@ public class LeetCode85 {
                 if (matrix[i][j] == '0') height[j] = 0;
                 else height[j]++;
             }
-            globalmax = Math.max(globalmax, maxrow(height));
+            globalmax = Math.max(globalmax, maxRow(height));
         }
         return globalmax;
     }
 
-    public int maxrow(int[] height) {
+    public int maxRow(int[] height) {
         Stack<Integer> st = new Stack<>();
         int localmax = 0;
         for (int i = 0; i <= height.length; i++) {
             int h = (i == height.length) ? 0 : height[i];
             while (!st.isEmpty() && height[st.peek()] >= h) {
-                int maxheight = height[st.pop()];
-                int area = st.isEmpty() ? i * maxheight : maxheight * (i - st.peek() - 1);
+                int maxHeight = height[st.pop()];
+                int area = st.isEmpty() ? i * maxHeight : maxHeight * (i - st.peek() - 1);
                 localmax = Math.max(localmax, area);
             }
             st.push(i);

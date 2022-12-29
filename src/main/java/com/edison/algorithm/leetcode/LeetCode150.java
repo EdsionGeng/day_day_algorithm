@@ -39,4 +39,9 @@ public class LeetCode150 {
 
     }
 
+    public static void main(String[] args) {
+        LeetCode150 le = new LeetCode150();
+        System.out.println(le.evalRPN(new String[]{"2","1","+","3","*"}));
+    }
+
 }

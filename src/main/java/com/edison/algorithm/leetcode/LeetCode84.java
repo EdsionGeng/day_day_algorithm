@@ -41,6 +41,6 @@ public class LeetCode84 {
     }
 
     public static void main(String[] args) {
-        largestRectangleArea(new int[]{2, 1, 5, 6, 3});
+        System.out.println(largestRectangleArea(new int[]{2, 1, 5, 6, 3}));
     }
 }

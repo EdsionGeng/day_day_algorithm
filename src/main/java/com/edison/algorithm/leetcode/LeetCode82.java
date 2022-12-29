@@ -42,15 +42,6 @@ public class LeetCode82 {
         }
         return head;
     }
-
-    public static ListNode delete(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode next = head.next;
-        return null;
-    }
-
     public static void main(String[] args) {
         ListNode listNode = new ListNode(1);
         listNode.next = new ListNode(1);

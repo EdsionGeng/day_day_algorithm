@@ -24,7 +24,6 @@ public class LeetCode695 {
 
     public boolean inArea(int[][] grid, int x, int y) {
         return x >=0 && x <grid.length && y >= 0 && y <grid[0].length;
-
     }
 
     public static void main(String[] args) {
